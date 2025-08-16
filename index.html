@@ -1,277 +1,114 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Scribe Haus — Stories • Design • Joy</title>
-  <meta name="description" content="Scribe Haus creates joyful children’s books and affirmations that build confidence, kindness, and creativity—by Akosua Addae Buapim." />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scribe Haus | Books by Akosua Addae Buapim</title>
+
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Scribe Haus – A creative home by Akosua Addae Buapim. Explore The Wilde Companion, children's affirmation books, and inspiring stories.">
+  <meta name="keywords" content="Scribe Haus, The Wilde Companion, children's books, affirmation books, Akosua Addae Buapim, journals, creative writing">
+  <meta name="author" content="Akosua Addae Buapim">
+
+  <!-- Open Graph (Social Media Preview) -->
+  <meta property="og:title" content="Scribe Haus | Akosua Addae Buapim">
+  <meta property="og:description" content="Discover The Wilde Companion, children's affirmation books, and creative works from Scribe Haus.">
+  <meta property="og:image" content="https://akosuaaddaebuapim-hash.github.io/Scribe-Haus/images/wilde-companion-cover.png">
+  <meta property="og:url" content="https://akosuaaddaebuapim-hash.github.io/Scribe-Haus/">
+  <meta property="og:type" content="website">
+
+  <!-- Styling -->
   <style>
-    :root{
-      --bg: #ffffff; --ink:#0f172a; --muted:#475569; --line:#e2e8f0;
-      --amber:#f59e0b; --amber-100:#fef3c7; --sky-100:#e0f2fe; --violet-100:#ede9fe;
+    body {
+      margin: 0;
+      font-family: "Georgia", serif;
+      background-color: #121212;
+      color: #f4f4f4;
     }
-    *{box-sizing:border-box}
-    html,body{margin:0;padding:0}
-    body{font-family:Inter,system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6}
-    a{color:inherit;text-decoration:none}
-    img{max-width:100%;display:block}
-    .container{max-width:1120px;margin:0 auto;padding:0 16px}
-    .btn{display:inline-block;padding:12px 18px;border-radius:14px;font-weight:700;border:1px solid var(--line);background:#fff}
-    .btn.primary{background:var(--amber);color:#111827;border-color:#d97706}
-    .btn.ghost{background:#fff}
-    .shadow{box-shadow:0 10px 30px rgba(2,6,23,.06)}
-    .card{border:1px solid var(--line);border-radius:18px;background:#fff}
-    .pill{display:inline-block;padding:6px 10px;border-radius:999px;font-size:12px;border:1px solid var(--line);background:#fff}
-    .section{padding:64px 0}
-    header{position:sticky;top:0;background:rgba(255,255,255,.85);backdrop-filter:saturate(180%) blur(8px);border-bottom:1px solid var(--line);z-index:50}
-    .nav{display:flex;align-items:center;justify-content:space-between;padding:12px 0}
-    .brand{display:flex;align-items:center;gap:12px}
-    .logo{height:40px;width:40px;border-radius:12px;background:var(--amber);display:flex;align-items:center;justify-content:center;font-weight:900;color:#111827}
-    .nav a{font-weight:600;margin-left:20px}
-    /* Hero */
-    .hero{position:relative;overflow:hidden}
-    .blob{position:absolute;border-radius:999px;filter:blur(40px);opacity:.6;z-index:-1}
-    .blob.a{height:260px;width:260px;background:var(--amber-100);top:-60px;right:-60px}
-    .blob.b{height:300px;width:300px;background:var(--sky-100);left:-80px;top:100px}
-    .grid{display:grid;gap:32px}
-    @media(min-width:960px){.grid-2{grid-template-columns:1fr 1fr}}
-    h1{font-size:40px;line-height:1.1;margin:0}
-    @media(min-width:960px){h1{font-size:64px}}
-    h2{font-size:34px;line-height:1.2;margin:0}
-    h3{font-size:20px;margin:8px 0}
-    p.lead{font-size:18px;color:var(--muted)}
-    /* Books grid */
-    .books{display:grid;gap:24px}
-    @media(min-width:720px){.books{grid-template-columns:repeat(2,1fr)}}
-    @media(min-width:1040px){.books{grid-template-columns:repeat(3,1fr)}}
-    /* Contact */
-    form input, form textarea{width:100%;border:1px solid var(--line);border-radius:14px;padding:12px 14px;font:inherit}
-    form textarea{min-height:120px}
-    footer{border-top:1px solid var(--line)}
+
+    header {
+      text-align: center;
+      padding: 2rem;
+      background: linear-gradient(90deg, #000, #1a1a1a);
+      color: #d4af37;
+      font-size: 2rem;
+      font-weight: bold;
+      letter-spacing: 2px;
+    }
+
+    main {
+      padding: 2rem;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    .book {
+      text-align: center;
+      margin: 3rem 0;
+    }
+
+    .book img {
+      max-width: 300px;
+      border: 3px solid #d4af37;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(212, 175, 55, 0.5);
+    }
+
+    .book h2 {
+      margin-top: 1rem;
+      color: #d4af37;
+      font-size: 1.8rem;
+    }
+
+    .coming-soon {
+      font-style: italic;
+      color: #ffcc00;
+      margin-top: 0.5rem;
+    }
+
+    footer {
+      background: #000;
+      text-align: center;
+      padding: 2rem;
+      color: #999;
+      font-size: 0.9rem;
+    }
+
+    footer a {
+      color: #d4af37;
+      text-decoration: none;
+      margin: 0 10px;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
   </style>
 </head>
 <body>
-  <!-- Top Nav -->
-  <header>
-    <div class="container nav">
-      <div class="brand">
-        <div class="logo shadow">SH</div>
-        <div>
-          <div style="font-weight:900;line-height:1">Scribe Haus</div>
-          <div style="font-size:12px;color:var(--muted);margin-top:-2px">Stories • Design • Joy</div>
-        </div>
-      </div>
-      <nav class="hide-mobile">
-        <a href="#books">Books</a>
-        <a href="#services">Services</a>
-        <a href="#about">About</a>
-        <a href="#contact">Contact</a>
-        <a class="btn primary" href="#shop">Shop</a>
-      </nav>
-    </div>
-  </header>  <!-- Hero -->  <section class="hero section">
-    <div class="blob a"></div>
-    <div class="blob b"></div>
-    <div class="container grid grid-2">
-      <div>
-        <h1>Words that help little hearts <span style="color:#d97706">grow</span></h1>
-        <p class="lead" style="max-width:56ch">Scribe Haus creates joyful children’s books and affirmations that build confidence, kindness, and creativity—crafted by <strong>Akosua Addae Buapim</strong>.</p>
-        <div style="margin-top:24px;display:flex;gap:12px;flex-wrap:wrap">
-          <a class="btn primary shadow" href="#books">Explore Books</a>
-          <a class="btn" href="#services">Author Services</a>
-        </div>
-        <div style="margin-top:12px;font-size:12px;color:var(--muted)">As seen in classrooms, libraries, and bedtime snuggles.</div>
-      </div>
-      <div>
-        <div class="card shadow" style="aspect-ratio:4/3;border-radius:24px;background:linear-gradient(135deg,#fff7ed, #e0f2fe);display:flex;align-items:center;justify-content:center;border:1px solid var(--line)">
-          <!-- Replace with your cover image -->
-          <div style="text-align:center;padding:24px">
-            <div style="color:#92400e;font-weight:800">Featured</div>
-            <div style="font-size:26px;font-weight:900;margin-top:6px">Tiny Thoughts, Big Power</div>
-            <div style="color:var(--muted);margin-top:6px">Children’s Positive Affirmations</div>
-            <div class="pill" style="margin-top:12px">32 pages • Full Color</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>  <!-- Books -->  <section id="books" class="section" style="background:#f8fafc;border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
-    <div class="container">
-      <div style="display:flex;align-items:end;justify-content:space-between;gap:12px">
-        <h2>Books</h2>
-        <a id="shop" href="#contact" style="color:#92400e;font-weight:700">Order / Wholesale →</a>
-      </div>
-      <p class="lead" style="max-width:60ch;margin-top:6px">Beautifully illustrated stories and affirmation posters that make confidence a daily habit for kids.</p><div class="books" style="margin-top:28px">
-    <!-- Book 1 -->
-    <article class="card shadow" style="padding:18px">
-      <div style="aspect-ratio:4/5;border-radius:16px;background:linear-gradient(135deg,#fef3c7,#ffe4e6);border:1px solid var(--line)"></div>
-      <h3 style="font-weight:800;margin-top:12px">Tiny Thoughts, Big Power</h3>
-      <p style="color:var(--muted);font-size:14px;margin-top:4px">A joyful collection of daily affirmations for little learners.</p>
-      <div style="display:flex;gap:8px;margin-top:8px">
-        <span class="pill" style="background:#fffbeb;border-color:#fde68a">Ages 3–8</span>
-        <span class="pill" style="background:#f1f5f9">Picture Book</span>
-      </div>
-      <div style="display:flex;gap:10px;margin-top:12px">
-        <a class="btn primary" href="#contact">Buy / Preorder</a>
-        <a class="btn" href="#sample">Preview</a>
-      </div>
-    </article>
+  <header>Scribe Haus</header>
 
-    <!-- Book 2 -->
-    <article class="card shadow" style="padding:18px">
-      <div style="aspect-ratio:4/5;border-radius:16px;background:linear-gradient(135deg,#e0f2fe,#dcfce7);border:1px solid var(--line)"></div>
-      <h3 style="font-weight:800;margin-top:12px">Affirmation Posters (Set)</h3>
-      <p style="color:var(--muted);font-size:14px;margin-top:4px">Printable wall art to make positivity part of the room.</p>
-      <div style="display:flex;gap:8px;margin-top:8px">
-        <span class="pill" style="background:#ecfeff">Digital</span>
-        <span class="pill" style="background:#f1f5f9">PDF/PNG</span>
-      </div>
-      <div style="display:flex;gap:10px;margin-top:12px">
-        <a class="btn primary" href="#contact">Get the Set</a>
-        <a class="btn" href="#sample">Preview</a>
-      </div>
-    </article>
+  <main>
+    <section class="book">
+      <img src="images/wilde-companion-cover.png" alt="The Wilde Companion Cover">
+      <h2>The Wilde Companion</h2>
+      <p>A vintage-inspired journal filled with Oscar Wilde quotes, fun facts, and space for your own reflections.</p>
+    </section>
 
-    <!-- Book 3 -->
-    <article class="card shadow" style="padding:18px">
-      <div style="aspect-ratio:4/5;border-radius:16px;background:linear-gradient(135deg,#ede9fe,#fef3c7);border:1px solid var(--line)"></div>
-      <h3 style="font-weight:800;margin-top:12px">Custom Name Books</h3>
-      <p style="color:var(--muted);font-size:14px;margin-top:4px">Personalized affirmations featuring your child’s name and look.</p>
-      <div style="display:flex;gap:8px;margin-top:8px">
-        <span class="pill" style="background:#eef2ff">Made to Order</span>
-        <span class="pill" style="background:#fffbeb">Giftable</span>
-      </div>
-      <div style="display:flex;gap:10px;margin-top:12px">
-        <a class="btn primary" href="#contact">Request One</a>
-        <a class="btn" href="#sample">Preview</a>
-      </div>
-    </article>
-  </div>
-</div>
+    <section class="book">
+      <img src="images/childrens-book-cover.png" alt="Children's Book Coming Soon">
+      <h2>Children’s Affirmation Book</h2>
+      <p class="coming-soon">Coming Soon – A book of positivity and confidence for kids.</p>
+    </section>
+  </main>
 
-  </section>  <!-- Services -->  <section id="services" class="section">
-    <div class="container">
-      <h2>Author & Design Services</h2>
-      <p class="lead" style="max-width:60ch;margin-top:6px">From concept to print, we help you bring uplifting stories to life—editing, layout, cover design, and KDP setup.</p>
-      <div class="books" style="margin-top:24px">
-        <div class="card shadow" style="padding:18px"><div class="pill" style="background:#fff7ed">Service</div><h3 style="font-weight:800">Manuscript Polish</h3><p style="color:var(--muted);font-size:14px">Gentle edits for clarity, rhythm, and read‑aloud flow.</p></div>
-        <div class="card shadow" style="padding:18px"><div class="pill" style="background:#ecfeff">Service</div><h3 style="font-weight:800">Illustration Direction</h3><p style="color:var(--muted);font-size:14px">Creative direction for cohesive, child‑friendly visuals.</p></div>
-        <div class="card shadow" style="padding:18px"><div class="pill" style="background:#f1f5f9">Service</div><h3 style="font-weight:800">KDP/Print Setup</h3><p style="color:var(--muted);font-size:14px">Trim sizes, bleed, ISBN/barcode, and upload support.</p></div>
-      </div>
-    </div>
-  </section>  <!-- About -->  <section id="about" class="section" style="background:#f8fafc;border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
-    <div class="container grid grid-2" style="align-items:center">
-      <div>
-        <h2>About Akosua Addae Buapim</h2>
-        <p class="lead" style="margin-top:10px">Akosua is a gifted author, visual storyteller, and imaginative designer whose creations spark joy in both children and adults. Through Scribe Haus, she blends warm words with vibrant visuals to inspire confidence, kindness, and creativity in young readers.</p>
-        <p class="lead" style="margin-top:6px">Her mission is simple: fill bookshelves—and hearts—with positivity.</p>
-        <div style="margin-top:18px;display:flex;gap:12px;flex-wrap:wrap">
-          <a href="#contact" class="btn primary">Work with Scribe Haus</a>
-          <a href="#books" class="btn">Browse Books</a>
-        </div>
-      </div>
-      <div>
-        <div class="card shadow" style="aspect-ratio:1;border-radius:24px;background:linear-gradient(135deg,#fff7ed,#e0f2fe);"></div>
-        <div class="pill" style="position:relative;left:auto;display:inline-block;margin-top:8px">Founder • Scribe Haus</div>
-      </div>
-    </div>
-  </section>  <!-- Testimonials -->  <section class="section">
-    <div class="container">
-      <h2>Love from Families</h2>
-      <div class="books" style="margin-top:24px">
-        <figure class="card shadow" style="padding:18px"><blockquote>“My child asks for these affirmations every night!”</blockquote><figcaption style="font-size:12px;color:var(--muted);margin-top:6px">— Parent Review</figcaption></figure>
-        <figure class="card shadow" style="padding:18px"><blockquote>“Bright, kind, and confidence‑building—exactly what we needed.”</blockquote><figcaption style="font-size:12px;color:var(--muted);margin-top:6px">— Parent Review</figcaption></figure>
-        <figure class="card shadow" style="padding:18px"><blockquote>“The art and words are beautiful. A new favorite in our home.”</blockquote><figcaption style="font-size:12px;color:var(--muted);margin-top:6px">— Parent Review</figcaption></figure>
-      </div>
-    </div>
-  </section>  <!-- Contact -->  <section id="contact" class="section" style="background:linear-gradient(135deg,#fffbeb,#f0f9ff);border-top:1px solid var(--line)">
-    <div class="container">
-      <div class="card shadow" style="padding:24px;border-radius:24px">
-        <div class="grid grid-2">
-          <div>
-            <h2>Let’s create something beautiful</h2>
-            <p class="lead" style="margin-top:8px">Wholesale orders, school visits, custom books, or collaboration inquiries—send a note and we’ll get back quickly.</p>
-            <ul style="list-style:none;padding:0;margin:18px 0 0 0;color:var(--muted);font-size:14px">
-              <li>📧 hello@scribehaus.com (example)</li>
-              <li>📍 Accra, Ghana</li>
-              <li>🕒 Mon–Fri, 9am–5pm GMT</li>
-            </ul>
-          </div>
-          <form onsubmit="event.preventDefault(); alert('This is a demo form. Connect it to Formspree or your email when you publish.');">
-            <input placeholder="Your name" required>
-            <div style="height:10px"></div>
-            <input type="email" placeholder="Email" required>
-            <div style="height:10px"></div>
-            <textarea placeholder="How can we help?"></textarea>
-            <div style="height:10px"></div>
-            <button class="btn primary" type="submit">Send Message</button>
-            <div style="font-size:12px;color:var(--muted);margin-top:8px">This is a demo form. Connect it to your email or a service like Formspree.</div>
-          </form>
-        </div>
-      </div>
-    </div>
-  </section>  <!-- Footer -->  <footer>
-    <div class="container" style="padding:28px 0;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px">
-      <div style="font-size:14px;color:var(--muted)">© <span id="year"></span> Scribe Haus • All rights reserved.</div>
-      <div style="font-size:14px;color:var(--muted)">Made with ❤️ by Akosua Addae Buapim</div>
-    </div>
+  <footer>
+    <p>Created by Akosua Addae Buapim</p>
+    <p>
+      <a href="mailto:akosuaaddaebuapim@gmail.com">Email</a> | 
+      <a href="https://www.instagram.com/a.buapim" target="_blank">Instagram</a> | 
+      <a href="https://wa.me/233547940650" target="_blank">WhatsApp</a>
+    </p>
   </footer>
-  <script>document.getElementById('year').textContent=new Date().getFullYear()</script>
 </body>
-  </html>
-<!-- Books Section -->
-<section id="books" class="section" style="background:#f8fafc;border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
-  <div class="container">
-    <h2>Children’s Books & Affirmation Posters</h2>
-    <p class="lead" style="max-width:60ch;margin-top:6px">Beautifully illustrated stories and affirmation posters that make positivity a daily habit for kids.</p>
-    <div class="books" style="margin-top:28px">
-      
-      <!-- Book 1 -->
-      <article class="card shadow" style="padding:18px">
-        <img src="images/tiny-thoughts-big-power.jpg" alt="Tiny Thoughts, Big Power book cover - children’s affirmations" style="border-radius:16px;">
-        <h3 style="font-weight:800;margin-top:12px">Tiny Thoughts, Big Power</h3>
-        <p style="color:var(--muted);font-size:14px;margin-top:4px">A joyful collection of daily affirmations for little learners aged 3–8, helping build confidence and positivity.</p>
-        <div style="display:flex;gap:8px;margin-top:8px">
-          <span class="pill" style="background:#fffbeb;border-color:#fde68a">Ages 3–8</span>
-          <span class="pill" style="background:#f1f5f9">Picture Book</span>
-        </div>
-        <div style="display:flex;gap:10px;margin-top:12px">
-          <a class="btn primary" href="#contact">Buy / Preorder</a>
-          <a class="btn" href="#sample">Preview</a>
-        </div>
-      </article>
-      
-      <!-- Book 2 -->
-      <article class="card shadow" style="padding:18px">
-        <img src="images/affirmation-posters-set.jpg" alt="Affirmation Posters set for children - printable wall art" style="border-radius:16px;">
-        <h3 style="font-weight:800;margin-top:12px">Affirmation Posters (Set)</h3>
-        <p style="color:var(--muted);font-size:14px;margin-top:4px">Printable wall art to make positivity part of every room, helping children embrace daily encouragement.</p>
-        <div style="display:flex;gap:8px;margin-top:8px">
-          <span class="pill" style="background:#ecfeff">Digital</span>
-          <span class="pill" style="background:#f1f5f9">PDF / PNG</span>
-        </div>
-        <div style="display:flex;gap:10px;margin-top:12px">
-          <a class="btn primary" href="#contact">Get the Set</a>
-          <a class="btn" href="#sample">Preview</a>
-        </div>
-      </article>
-      
-      <!-- Book 3 -->
-      <article class="card shadow" style="padding:18px">
-        <img src="images/custom-name-books.jpg" alt="Custom Name Books - personalized children’s affirmations" style="border-radius:16px;">
-        <h3 style="font-weight:800;margin-top:12px">Custom Name Books</h3>
-        <p style="color:var(--muted);font-size:14px;margin-top:4px">Personalized affirmations featuring your child’s name and appearance, making reading magical and unique.</p>
-        <div style="display:flex;gap:8px;margin-top:8px">
-          <span class="pill" style="background:#eef2ff">Made to Order</span>
-          <span class="pill" style="background:#fffbeb">Giftable</span>
-        </div>
-        <div style="display:flex;gap:10px;margin-top:12px">
-          <a class="btn primary" href="#contact">Request One</a>
-          <a class="btn" href="#sample">Preview</a>
-        </div>
-      </article>
-
-    </div>
-  </div>
-</section>
+</html>
