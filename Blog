@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Scribe Haus | Blog</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <div class="logo">Scribe Haus</div>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="services.html">Services</a></li>
+    <li><a href="books.html">Books</a></li>
+    <li><a href="blog.html" class="active">Blog</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</header>
+
+<section class="blog">
+<h1>Akos’ Corner</h1>
+<div class="card">
+<h3>Motherhood Reflections</h3>
+<p>Stories and milestones of Kyrie.</p>
+</div>
+<div class="card">
+<h3>Productivity Tips</h3>
+<p>How to stay inspired while working creatively.</p>
+</div>
+<div class="card">
+<h3>Books & Films</h3>
+<p>Reviews, recommendations, and inspiration for young minds.</p>
+</div>
+</section>
+
+<footer>
+<p>© 2025 Scribe Haus | Akosua Addae Buapim</p>
+</footer>
+</body>
+</html>
