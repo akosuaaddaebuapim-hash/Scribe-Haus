@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Scribe Haus | Contact</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <div class="logo">Scribe Haus</div>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="services.html">Services</a></li>
+    <li><a href="books.html">Books</a></li>
+    <li><a href="blog.html">Blog</a></li>
+    <li><a href="contact.html" class="active">Contact</a></li>
+  </ul>
+</header>
+
+<section class="contact">
+<h1>Contact</h1>
+<p>Send us a message:</p>
+<form>
+<input type="text" placeholder="Your name">
+<input type="email" placeholder="Email">
+<textarea placeholder="Message"></textarea>
+<button class="btn">Send Message</button>
+</form>
+</section>
+
+<footer>
+<p>© 2025 Scribe Haus | Akosua Addae Buapim</p>
+</footer>
+</body>
+</html>
