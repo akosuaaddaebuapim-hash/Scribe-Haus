@@ -4,142 +4,128 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Scribe Haus — Where Words, Design & Play Collide</title>
-  <meta name="description" content="Scribe Haus — a creative studio founded by Akosua Addae Buapim. Books, custom projects, graphic design, CV services, and an interactive Play Zone for kids & adults." />
+  <meta name="description" content="Scribe Haus — creative studio by Akosua Addae Buapim. Books, custom projects, design, CVs and an interactive Play Zone for kids & adults." />
   <meta name="author" content="Akosua Addae Buapim / Scribe Haus" />
-  <!-- Open Graph / Social preview (update paths if you host elsewhere) -->
+  <!-- Social preview (optional): upload images/og-cover.jpg -->
   <meta property="og:title" content="Scribe Haus — Where Words, Design & Play Collide" />
-  <meta property="og:description" content="Books, custom books, graphic design, CV & cover letters, plus a playful interactive zone for families." />
-  <meta property="og:image" content="images/file_the_wilde_companion.png" />
-  <meta property="og:type" content="website" />
+  <meta property="og:description" content="Books, custom projects, graphic design, CV services, and a playful interactive zone." />
+  <meta property="og:image" content="images/og-cover.jpg" />
   <meta name="twitter:card" content="summary_large_image" />
-
   <style>
-    /* ---------- Root / Palette (bronze-gold fantasy) ---------- */
+    /* ---------- Palette & Base ---------- */
     :root{
-      --bg:#0b0b0d;
-      --panel:#111214;
-      --ink:#f4f4f2;
-      --muted:#bdb0a0;
-      --bronze:#b07a2f;    /* main bronze */
-      --bronze-2:#c29748;  /* lighter bronze */
-      --accent:#7ebef7;
-      --line: #232325;
-      --glass: rgba(255,255,255,0.03);
-      --radius:14px;
+      --bg:#080707;
+      --panel:#0f0f10;
+      --muted:#bfb4a3;
+      --bronze:#b07a2f;
+      --bronze-2:#c29748;
+      --accent:#91c2ff;
+      --glass: rgba(255,255,255,0.02);
+      --line: rgba(255,255,255,0.03);
+      --radius:12px;
+      --pad:18px;
     }
     *{box-sizing:border-box}
     html,body{height:100%}
     body{
       margin:0;
-      background: radial-gradient(1200px 600px at 10% 10%, #111 0%, var(--bg) 35%, #070707 100%);
-      color:var(--ink);
-      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;
+      background: radial-gradient(800px 400px at 10% 10%, #0b0b0b 0%, #070707 45%, #050505 100%);
+      color:#f3efe8;
       -webkit-font-smoothing:antialiased;
       -moz-osx-font-smoothing:grayscale;
       line-height:1.6;
       scroll-behavior:smooth;
     }
+    a{color:var(--bronze-2)}
+    img{max-width:100%;display:block}
 
-    /* ---------- Top Nav ---------- */
-    header.site-header{
-      position:sticky; top:0; z-index:1200;
-      backdrop-filter: blur(8px) saturate(140%);
-      background: linear-gradient(180deg, rgba(11,11,12,0.7), rgba(11,11,12,0.45));
-      border-bottom:1px solid rgba(255,255,255,0.03);
-    }
-    .nav-wrap{max-width:1120px;margin:0 auto;padding:14px 18px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+    /* ---------- Header ---------- */
+    header{position:sticky;top:0;z-index:1200;background:linear-gradient(180deg, rgba(0,0,0,0.65), rgba(0,0,0,0.45));border-bottom:1px solid var(--line)}
+    .nav{max-width:1120px;margin:0 auto;padding:12px 18px;display:flex;align-items:center;justify-content:space-between;gap:12px}
     .brand{display:flex;align-items:center;gap:12px}
-    .brand .mark{
-      width:48px;height:48px;border-radius:10px;display:grid;place-items:center;
-      background:linear-gradient(135deg,var(--bronze),var(--bronze-2));
-      color:#111;font-weight:800;font-family:"Georgia",serif;box-shadow:0 8px 30px rgba(176,122,47,0.12);
-    }
-    .brand .title{font-weight:800;line-height:1}
-    .brand .subtitle{font-size:12px;color:var(--muted);margin-top:2px}
+    .mark{width:48px;height:48px;border-radius:10px;background:linear-gradient(135deg,var(--bronze),var(--bronze-2));display:grid;place-items:center;font-weight:900;color:#0b0b0b;font-family:Georgia,serif}
+    .brand .title{font-weight:800}
+    .brand .sub{font-size:12px;color:var(--muted);margin-top:3px}
 
-    nav.top-menu{display:flex;gap:14px;align-items:center}
-    nav.top-menu a{color:var(--ink);text-decoration:none;font-weight:600;padding:8px 10px;border-radius:10px;opacity:.95}
-    nav.top-menu a:hover{color:var(--bronze-2);background:var(--glass)}
-    .cta {border-radius:12px;padding:8px 14px;background:linear-gradient(90deg,var(--bronze),var(--bronze-2));color:#111;font-weight:700;box-shadow:0 10px 30px rgba(176,122,47,0.12)}
-    @media(max-width:860px){
-      nav.top-menu{display:none}
-    }
+    nav.menu{display:flex;gap:12px;align-items:center}
+    nav.menu a{padding:8px 10px;border-radius:10px;font-weight:600;text-decoration:none;color:inherit}
+    nav.menu a:hover{background:var(--glass);color:var(--bronze-2)}
+    .cta{background:linear-gradient(90deg,var(--bronze),var(--bronze-2));padding:8px 12px;border-radius:10px;color:#111;font-weight:800}
 
     /* ---------- Hero ---------- */
-    .hero{max-width:1200px;margin:28px auto 8px;padding:36px 22px;border-radius:18px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border:1px solid rgba(255,255,255,0.02);display:grid;grid-template-columns:1fr 420px;gap:26px}
-    @media(max-width:980px){.hero{grid-template-columns:1fr}}
-    .hero h1{font-family:"Playfair Display", Georgia, serif;font-size:44px;margin:0;color:var(--bronze-2);text-shadow:0 6px 18px rgba(176,122,47,0.06)}
-    .hero p.lead{color:var(--muted);margin-top:12px;font-size:18px}
-    .hero .buttons{margin-top:18px;display:flex;gap:12px;flex-wrap:wrap}
-    .hero .buttons .btn{padding:10px 14px;border-radius:12px;border:1px solid rgba(255,255,255,0.04);cursor:pointer}
-    .btn-primary{background:linear-gradient(90deg,var(--bronze),var(--bronze-2));color:#111;font-weight:800}
-    .btn-ghost{background:transparent;color:var(--bronze-2);border:1px solid rgba(255,255,255,0.03)}
+    .hero{max-width:1200px;margin:26px auto;padding:26px;border-radius:16px;background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.003));border:1px solid var(--line);display:grid;grid-template-columns:1fr 360px;gap:20px}
+    @media(max-width:980px){.hero{grid-template-columns:1fr;padding:18px}}
+    .hero h1{font-family: "Playfair Display", Georgia, serif;font-size:40px;color:var(--bronze-2);margin:0}
+    .lead{color:var(--muted);margin-top:10px}
+    .hero .actions{margin-top:16px;display:flex;gap:10px;flex-wrap:wrap}
+    .btn{padding:10px 14px;border-radius:10px;border:1px solid rgba(255,255,255,0.03);cursor:pointer;background:transparent;color:inherit;font-weight:700}
+    .btn.primary{background:linear-gradient(90deg,var(--bronze),var(--bronze-2));color:#080707}
+    .btn.ghost{border:1px dashed rgba(255,255,255,0.03);color:var(--bronze-2)}
 
-    .hero .covers{display:flex;flex-direction:column;gap:14px;align-items:center}
-    .cover-card{width:100%;background:linear-gradient(180deg, rgba(255,255,255,0.015), rgba(255,255,255,0.01));padding:12px;border-radius:12px;border:1px solid rgba(255,255,255,0.02);display:flex;gap:12px;align-items:center}
-    .cover-card img{width:120px;border-radius:10px;border:2px solid rgba(0,0,0,0.6);box-shadow:0 18px 40px rgba(0,0,0,0.6)}
-    .cover-meta{flex:1}
-    .badge{display:inline-block;padding:6px 10px;border-radius:999px;background:rgba(0,0,0,0.35);color:var(--bronze-2);font-weight:700;border:1px solid rgba(255,255,255,0.02)}
+    .covers{display:flex;flex-direction:column;gap:14px}
+    .cover-card{display:flex;gap:12px;align-items:center;padding:10px;border-radius:10px;background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.004));border:1px solid rgba(255,255,255,0.02)}
+    .cover-card img{width:92px;height:auto;border-radius:8px;box-shadow:0 18px 36px rgba(0,0,0,0.6)}
+    .cover-meta strong{display:block}
+    .badge{display:inline-block;padding:6px 8px;border-radius:999px;background:rgba(0,0,0,0.35);color:var(--bronze-2);font-weight:700;border:1px solid rgba(255,255,255,0.02);font-size:12px}
 
-    /* ---------- Sections ---------- */
+    /* ---------- Main content ---------- */
     main{max-width:1120px;margin:28px auto;padding:0 18px}
-    section.block{padding:36px 0;border-top:1px solid rgba(255,255,255,0.02)}
-    section.block h2{font-family:"Playfair Display",serif;color:var(--bronze-2);margin-bottom:12px}
-    .cols{display:grid;gap:20px}
+    section.block{padding:28px 0;border-top:1px solid rgba(255,255,255,0.02)}
+    section.block h2{font-family:"Playfair Display",serif;color:var(--bronze-2);margin-bottom:10px}
+    .card{background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.005));padding:16px;border-radius:12px;border:1px solid rgba(255,255,255,0.02)}
+    .muted{color:var(--muted)}
+    .cols{display:grid;gap:16px}
+    .cols.cols-2{grid-template-columns:1fr 1fr}
     .cols.cols-3{grid-template-columns:repeat(3,1fr)}
-    .cols.cols-2{grid-template-columns:repeat(2,1fr)}
-    @media(max-width:960px){.cols.cols-3,.cols.cols-2{grid-template-columns:1fr}}
+    @media(max-width:980px){.cols.cols-2,.cols.cols-3{grid-template-columns:1fr}}
 
-    .card{background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.005));padding:18px;border-radius:12px;border:1px solid rgba(255,255,255,0.02);box-shadow:0 10px 30px rgba(10,10,10,0.5)}
-    .muted{color:var(--muted);font-size:15px}
+    /* Play zone */
+    .play-grid{display:grid;gap:16px}
+    @media(min-width:920px){.play-grid{grid-template-columns:1fr 1fr}}
+    .play-card{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;min-height:150px}
+    .spin-output{font-size:20px;font-weight:800;color:var(--bronze-2)}
+    .prompt{font-weight:700;color:var(--accent)}
     .small{font-size:13px;color:var(--muted)}
 
-    /* service icons */
-    .service-ico{font-size:28px;margin-bottom:8px}
-
-    /* downloads table */
-    .files-list{display:flex;flex-direction:column;gap:8px}
-    .files-list a{display:inline-block;padding:10px 12px;border-radius:10px;background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.02);color:var(--bronze-2)}
-
-    /* play zone */
-    .play-grid{display:grid;gap:18px}
-    @media(min-width:920px){.play-grid{grid-template-columns:1fr 1fr}}
-    .play-card{min-height:140px;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:12px}
-    .spin-output{font-weight:800;color:var(--bronze-2);font-size:20px}
-
-    /* memory board */
+    /* memory */
     .memory-board{display:flex;flex-wrap:wrap;gap:8px;justify-content:center}
-    .memo-btn{min-width:60px;min-height:60px;border-radius:10px;border:1px solid rgba(255,255,255,0.03);background:rgba(255,255,255,0.02);font-size:22px}
-
-    /* quiz / prompt */
-    .prompt-box{font-weight:700;color:var(--accent)}
-    .quiz-result{font-weight:700;color:var(--bronze-2)}
+    .memo-btn{min-width:56px;min-height:56px;border-radius:8px;border:1px solid rgba(255,255,255,0.03);background:rgba(255,255,255,0.02);font-size:20px}
 
     /* contact */
-    .contact-grid{display:grid;gap:18px}
-    @media(min-width:920px){.contact-grid{grid-template-columns:1fr 380px}}
+    .contact-grid{display:grid;gap:14px}
+    @media(min-width:920px){.contact-grid{grid-template-columns:1fr 420px}}
 
     /* footer */
-    footer.site-footer{margin-top:28px;padding:26px;border-top:1px solid rgba(255,255,255,0.02);text-align:center;color:var(--muted)}
-    .socials a{color:var(--bronze-2);text-decoration:none;margin:0 8px;font-weight:700}
-    /* small screens */
-    @media(max-width:540px){ .hero h1{font-size:28px} .brand .title{font-size:18px} }
+    footer.site-footer{margin-top:30px;padding:20px;border-top:1px solid rgba(255,255,255,0.02);text-align:center;color:var(--muted)}
+
+    /* input styles */
+    input[type="text"], input[type="email"], textarea{width:100%;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.03);background:rgba(255,255,255,0.01);color:inherit}
+
+    /* tiny responsive */
+    @media(max-width:560px){
+      .nav{padding:10px}
+      .brand .title{font-size:16px}
+      .hero{grid-template-columns:1fr}
+    }
   </style>
 </head>
 <body>
 
-  <!-- Header / Nav -->
+  <!-- Header -->
   <header class="site-header" role="banner">
-    <div class="nav-wrap">
+    <div class="nav">
       <div class="brand">
-        <div class="mark"><span style="font-size:18px">SH</span></div>
+        <!-- if you have uploaded images/logo.svg it will show, otherwise the fallback mark text appears -->
+        <img src="images/logo.svg" alt="Scribe Haus logo" style="width:48px;height:48px;border-radius:10px;display:block" onerror="this.style.display='none';document.querySelector('.mark').style.display='grid'">
+        <div class="mark" style="display:none">SH</div>
         <div>
           <div class="title">Scribe Haus</div>
-          <div class="subtitle">Founded by Akosua Addae Buapim</div>
+          <div class="sub">Founded by Akosua Addae Buapim</div>
         </div>
       </div>
 
-      <nav class="top-menu" aria-label="Primary navigation">
+      <nav class="menu" role="navigation" aria-label="Main">
         <a href="#about">About</a>
         <a href="#books">Books</a>
         <a href="#services">Services</a>
@@ -153,37 +139,37 @@
 
   <!-- Hero -->
   <div class="hero" role="region" aria-label="Introduction">
-    <div class="hero-content" style="padding:22px">
+    <div>
       <h1>Scribe Haus — Where Words, Design & Play Collide</h1>
-      <p class="lead muted">We create joyful children's books, vintage-inspired journals, and bespoke creative projects — with a bronze-gold fantasy touch.</p>
-      <div class="buttons">
-        <button class="btn-primary" onclick="document.getElementById('books').scrollIntoView({behavior:'smooth'})">See Books</button>
-        <button class="btn-ghost" onclick="document.getElementById('play').scrollIntoView({behavior:'smooth'})">Play Zone</button>
-        <button class="btn-ghost" onclick="document.getElementById('services').scrollIntoView({behavior:'smooth'})">Hire the Studio</button>
+      <p class="lead muted">We craft children’s books, guided journals, and bespoke creative projects with a warm bronze-gold fantasy touch. Practical + playful. Professional + human.</p>
+      <div class="hero actions">
+        <button class="btn primary" onclick="document.getElementById('books').scrollIntoView({behavior:'smooth'})">See Books</button>
+        <button class="btn" onclick="document.getElementById('play').scrollIntoView({behavior:'smooth'})">Play Zone</button>
+        <button class="btn" onclick="document.getElementById('services').scrollIntoView({behavior:'smooth'})">Hire the Studio</button>
       </div>
-      <p class="small" style="margin-top:12px">Tip: try the Play Zone — short interactive things for kids & adults.</p>
+      <p class="small" style="margin-top:10px">Psst — if you want a bespoke kids' book, I can personalize names, dedications, and photos. Message me below ❤️</p>
     </div>
 
-    <aside class="covers" style="padding:18px">
+    <aside class="covers" aria-hidden="false">
+      <!-- Book 1 -->
       <div class="cover-card">
-        <img src="images/file_the_wilde_companion.png" alt="The Wilde Companion cover">
+        <img src="images/file_the_wilde_companion.png" alt="The Wilde Companion cover" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+        <div style="display:none;padding:10px;border-radius:8px;background:linear-gradient(180deg,rgba(255,255,255,0.01),transparent)" class="img-placeholder">The Wilde Companion</div>
         <div class="cover-meta">
-          <div style="display:flex;align-items:center;justify-content:space-between">
-            <strong>The Wilde Companion</strong>
-            <span class="badge">Journal</span>
-          </div>
-          <div class="small muted" style="margin-top:6px">Vintage quotes, facts & prompts — inspired by Oscar Wilde.</div>
+          <strong>The Wilde Companion</strong>
+          <div class="small muted" style="margin-top:6px">A vintage-inspired journal of quotes, fun facts, and reflection prompts.</div>
+          <div style="margin-top:8px"><span class="badge">Journal</span></div>
         </div>
       </div>
 
+      <!-- Book 2 -->
       <div class="cover-card">
-        <img src="images/file_tiny_thoughts_big_power.png" alt="Tiny Thoughts, Big Power cover">
+        <img src="images/file_tiny_thoughts_big_power.png" alt="Tiny Thoughts, Big Power cover" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+        <div style="display:none;padding:10px;border-radius:8px;background:linear-gradient(180deg,rgba(255,255,255,0.01),transparent)" class="img-placeholder">Tiny Thoughts</div>
         <div class="cover-meta">
-          <div style="display:flex;align-items:center;justify-content:space-between">
-            <strong>Tiny Thoughts, Big Power</strong>
-            <span class="badge">Children</span>
-          </div>
-          <div class="small muted" style="margin-top:6px">Daily affirmations and playful prompts to help little hearts grow.</div>
+          <strong>Tiny Thoughts, Big Power</strong>
+          <div class="small muted" style="margin-top:6px">Affirmations and prompts to help little hearts grow—perfect for parents and classrooms.</div>
+          <div style="margin-top:8px"><span class="badge">Children</span></div>
         </div>
       </div>
     </aside>
@@ -194,7 +180,7 @@
     <section id="about" class="block" aria-labelledby="about-title">
       <h2 id="about-title">About Scribe Haus</h2>
       <div class="card">
-        <p class="muted">Scribe Haus is a boutique creative studio combining storytelling and design. Founded by <strong>Akosua Addae Buapim</strong>, we craft children's books, guided journals, brand visuals, and custom projects that feel both playful and elegant. Our work is designed to be kept — not just read.</p>
+        <p class="muted">Hi — I’m Akosua. I started Scribe Haus because I love words, tiny brave hearts, and thoughtful design. We make books kids hug, journals adults return to, and small brand pieces that feel personal. Everything is handcrafted with care and a dash of playful magic.</p>
       </div>
     </section>
 
@@ -204,16 +190,15 @@
       <div class="cols cols-2">
         <div class="card">
           <h3>The Wilde Companion</h3>
-          <img src="images/file_the_wilde_companion.png" alt="The Wilde Companion Cover" style="width:220px;margin:12px 0">
-          <p class="muted">A vintage-style guided journal blending Oscar Wilde quotes, quirky facts, and space for your reflections.</p>
-          <div style="margin-top:10px"><button class="btn-primary" onclick="alert('Preorder interest noted — message via WhatsApp or email!')">Preorder Interest</button></div>
+          <img src="images/file_the_wilde_companion.png" alt="The Wilde Companion" style="width:180px;margin:12px 0" onerror="this.style.display='none'">
+          <p class="muted">Vintage quotes + prompts to reflect on. A small companion for everyday observations and wonder.</p>
+          <div style="margin-top:10px"><button class="btn primary" onclick="alert('Preorder interest noted — thank you!')">Preorder Interest</button></div>
         </div>
-
         <div class="card">
           <h3>Tiny Thoughts, Big Power</h3>
-          <img src="images/file_tiny_thoughts_big_power.png" alt="Tiny Thoughts Big Power Cover" style="width:220px;margin:12px 0">
-          <p class="muted">An illustrated affirmation book for children — short lines, bright illustrations, and gentle prompts for parents and teachers.</p>
-          <div style="margin-top:10px"><button class="btn-ghost" onclick="alert('Thanks — we will notify you when it launches!')">Subscribe for Launch</button></div>
+          <img src="images/file_tiny_thoughts_big_power.png" alt="Tiny Thoughts, Big Power" style="width:180px;margin:12px 0" onerror="this.style.display='none'">
+          <p class="muted">Short affirmations and playful prompts to help build confidence, kindness, and curiosity in little ones.</p>
+          <div style="margin-top:10px"><button class="btn" onclick="alert('Thanks — you will be notified on launch!')">Subscribe for Launch</button></div>
         </div>
       </div>
     </section>
@@ -224,99 +209,94 @@
       <div class="cols cols-3">
         <div class="card">
           <div class="service-ico">✍🏾</div>
-          <h3>Writing & Editing</h3>
-          <p class="muted">Manuscript edits, children’s writing, journals, copyediting and developmental feedback.</p>
-          <div style="margin-top:8px"><button class="btn" onclick="location.href='mailto:akosuaaddaebuapim@gmail.com'">Book a Consult</button></div>
+          <h4>Writing & Editing</h4>
+          <p class="muted">Children’s text, journal prompts, manuscript edits, and friendly copy. I give your words room to breathe.</p>
         </div>
-
         <div class="card">
           <div class="service-ico">🎨</div>
-          <h3>Graphic Design</h3>
-          <p class="muted">Covers, flyers, social kits and print-ready layouts with a luxury-friendly, playful aesthetic.</p>
-          <div style="margin-top:8px"><button class="btn" onclick="location.href='https://wa.me/233547940650'">Chat on WhatsApp</button></div>
+          <h4>Graphic Design</h4>
+          <p class="muted">Covers, promo graphics and brand visuals that pair playfulness with polish.</p>
+        </div>
+        <div class="card">
+          <div class="service-ico">📚</div>
+          <h4>Custom Books</h4>
+          <p class="muted">Personalized children’s books (names, photos, dedications) — thoughtful gifts and keepsakes.</p>
         </div>
 
         <div class="card">
           <div class="service-ico">📄</div>
-          <h3>CVs & Cover Letters</h3>
-          <p class="muted">Polished resumes and tailored applications that help clients stand out and get interviews.</p>
-          <div style="margin-top:8px"><button class="btn" onclick="location.href='https://www.instagram.com/a.buapim'">DM on Instagram</button></div>
-        </div>
-
-        <div class="card">
-          <div class="service-ico">📚</div>
-          <h3>Custom Books & Projects</h3>
-          <p class="muted">Personalized children’s books (names, dedications, photo pages) and bespoke journals for special occasions.</p>
-          <div style="margin-top:8px"><button class="btn-primary" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Request a Project</button></div>
-        </div>
-
-        <div class="card">
-          <div class="service-ico">🌐</div>
-          <h3>Mini Websites & Brand Kits</h3>
-          <p class="muted">Small business pages, portfolio pieces, and simple shop-setup for indie authors & creatives.</p>
+          <h4>CV & Cover Letters</h4>
+          <p class="muted">Clean, confident resumes and letters that help people stand out—tailored to your story.</p>
         </div>
 
         <div class="card">
           <div class="service-ico">✨</div>
-          <h3>Launch Packages</h3>
-          <p class="muted">Cover + formatting + promo graphics + launch-ready copy for a smooth release.</p>
+          <h4>Launch Packages</h4>
+          <p class="muted">Cover + formatting + promo graphics + launch copy — ready for upload to stores or print.</p>
+        </div>
+
+        <div class="card">
+          <div class="service-ico">🌐</div>
+          <h4>Mini Websites & Brand Kits</h4>
+          <p class="muted">Portfolio sites, shop pages, and social kits — simple, fast, and lovely.</p>
         </div>
       </div>
+      <div style="margin-top:12px"><button class="btn primary" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Request a Quote</button></div>
     </section>
 
     <!-- Play Zone -->
     <section id="play" class="block" aria-labelledby="play-title">
-      <h2 id="play-title">Play Zone — For Kids & Adults</h2>
-      <p class="small muted">Short, delightful interactive tools to inspire creativity, encourage reflection, and keep families busy for a while.</p>
+      <h2 id="play-title">Play Zone — Short & Delightful</h2>
+      <p class="small muted">Mini-tools for 2–99 year olds: quick prompts, affirmations, memory games, scrambles, and a 5-minute creative sprint.</p>
 
-      <div class="play-grid" style="margin-top:18px">
+      <div class="play-grid" style="margin-top:14px">
         <!-- Affirmation Spinner -->
         <div class="card play-card">
           <h3>Affirmation Spinner</h3>
-          <div class="spin-output" id="spin-out">Click Spin to get an affirmation</div>
-          <button class="btn-primary" id="spin-btn" onclick="spinAffirmation()">Spin</button>
-          <div class="small muted" style="margin-top:8px">Tap again for a fresh affirmation.</div>
+          <div id="spin-out" class="spin-output">Click Spin to get a kind thought</div>
+          <div><button id="spin-btn" class="btn primary" onclick="spinAffirmation()">Spin</button></div>
+          <div class="small muted">Tap as many times as you like ✨</div>
         </div>
 
-        <!-- Prompt Generator -->
+        <!-- Prompt generator -->
         <div class="card play-card">
           <h3>Creative Prompt</h3>
-          <div class="prompt-box" id="prompt-out">Need a spark?</div>
-          <div style="margin-top:8px"><button class="btn" onclick="newPrompt('prompt-out')">New Prompt</button></div>
-          <div class="small muted" style="margin-top:8px">Great for 5 minute drawing or quick writing sprints.</div>
+          <div id="prompt-out" class="prompt">Need a spark?</div>
+          <div><button class="btn" onclick="newPrompt('prompt-out')">New Prompt</button></div>
+          <div class="small muted">Use for 5-minute drawing or quick writing sprints.</div>
         </div>
 
-        <!-- Mini Quiz -->
+        <!-- Mini quiz -->
         <div class="card play-card">
-          <h3>Mini Quiz — Which Scribe Haus Character?</h3>
-          <div id="quiz-area" class="small">Press Start — 3 quick questions.</div>
-          <div style="margin-top:10px"><button class="btn-primary" onclick="startQuiz()">Start Quiz</button></div>
+          <h3>Mini Quiz</h3>
+          <div id="quiz-area" class="small">Press Start — just 3 questions</div>
+          <div><button class="btn primary" onclick="startQuiz()">Start Quiz</button></div>
         </div>
 
-        <!-- Memory Game -->
+        <!-- Memory game -->
         <div class="card play-card">
           <h3>Memory Match</h3>
-          <div id="memory-board" class="memory-board"></div>
+          <div id="memory-board" class="memory-board" style="margin-top:6px"></div>
           <div id="memory-status" class="small muted" style="margin-top:8px"></div>
           <div style="margin-top:10px"><button class="btn" onclick="buildMemory()">New Game</button></div>
         </div>
 
-        <!-- Word Scramble (simple) -->
+        <!-- Scramble -->
         <div class="card play-card">
           <h3>Word Scramble</h3>
-          <div id="scramble-out" class="small muted">Press shuffle</div>
+          <div id="scramble-out" class="small muted">Press Shuffle</div>
           <div style="margin-top:8px">
             <button class="btn" onclick="scrambleWord()">Shuffle</button>
-            <button class="btn-ghost" onclick="revealSolution()">Reveal</button>
+            <button class="btn" onclick="revealSolution()">Reveal</button>
           </div>
         </div>
 
-        <!-- 5-min Creative Timer -->
+        <!-- 5-min timer -->
         <div class="card play-card">
           <h3>5-Minute Sprint</h3>
           <div id="timer-display" class="small muted">00:05:00</div>
           <div style="margin-top:8px">
-            <button class="btn-primary" onclick="startTimer(300)">Start 5m</button>
+            <button class="btn primary" onclick="startTimer(300)">Start 5m</button>
             <button class="btn" onclick="stopTimer()">Stop</button>
           </div>
         </div>
@@ -325,20 +305,20 @@
 
     <!-- Downloads -->
     <section id="downloads" class="block" aria-labelledby="downloads-title">
-      <h2 id="downloads-title">Downloads — Free & Printables</h2>
+      <h2 id="downloads-title">Downloads — Print & Play</h2>
       <div class="cols cols-2">
         <div class="card">
-          <h3>For Kids</h3>
+          <h4>For Kids</h4>
           <div class="files-list">
             <a href="files/colouring-affirmations.pdf" download>Coloring: Affirmations (PDF)</a>
             <a href="files/affirmation-cards.pdf" download>Mini Affirmation Cards (PDF)</a>
-            <a href="files/activity-pack.zip" download>Activity Pack (zip)</a>
+            <a href="files/activity-pack.zip" download>Activity Pack (ZIP)</a>
           </div>
-          <p class="small muted" style="margin-top:8px">Drop your printable files into <code>/files/</code> on GitHub to enable downloads.</p>
+          <p class="small muted" style="margin-top:8px">Upload printable files to <code>/files/</code> in your repo to activate downloads.</p>
         </div>
 
         <div class="card">
-          <h3>For Adults</h3>
+          <h4>For Adults</h4>
           <div class="files-list">
             <a href="files/journal-pages.pdf" download>Journal Pages (PDF)</a>
             <a href="files/resume-template.docx" download>CV Template (DOCX)</a>
@@ -348,22 +328,13 @@
       </div>
     </section>
 
-    <!-- Inspiration / Blog small feed -->
+    <!-- Inspiration -->
     <section id="inspo" class="block" aria-labelledby="inspo-title">
       <h2 id="inspo-title">Inspiration & Tips</h2>
       <div class="cols cols-3">
-        <div class="card">
-          <h4>Daily Creative Tip</h4>
-          <p class="muted">Break large tasks into 10-minute sessions — momentum matters more than perfection.</p>
-        </div>
-        <div class="card">
-          <h4>Quote</h4>
-          <p class="quote">"Be yourself; everyone else is already taken." — (a classic reminder to write your truth.)</p>
-        </div>
-        <div class="card">
-          <h4>Affirmation</h4>
-          <p class="muted">I am patient with my progress.</p>
-        </div>
+        <div class="card"><h4>Daily Tip</h4><p class="muted">Split big goals into short, lovely blocks — ten minutes of focus is still progress.</p></div>
+        <div class="card"><h4>Quote</h4><p class="muted">“Write what should not be forgotten.” — a nudge to keep creating.</p></div>
+        <div class="card"><h4>Affirmation</h4><p class="muted">I am kind to my small, steady steps.</p></div>
       </div>
     </section>
 
@@ -372,20 +343,24 @@
       <h2 id="contact-title">Work With Scribe Haus</h2>
       <div class="contact-grid">
         <div class="card">
-          <h3>Get in touch</h3>
-          <p class="muted">Email: <a href="mailto:akosuaaddaebuapim@gmail.com" style="color:var(--bronze-2)">akosuaaddaebuapim@gmail.com</a></p>
-          <p class="muted">Instagram: <a target="_blank" href="https://www.instagram.com/a.buapim" style="color:var(--bronze-2)">@a.buapim</a></p>
-          <p class="muted">WhatsApp: <a target="_blank" href="https://wa.me/233547940650" style="color:var(--bronze-2)">+233 54 794 0650</a></p>
-          <div style="margin-top:12px"><button class="btn-primary" onclick="location.href='mailto:akosuaaddaebuapim@gmail.com'">Email Me</button></div>
+          <h4>Contact</h4>
+          <p class="muted">Email: <a href="mailto:akosuaaddaebuapim@gmail.com">akosuaaddaebuapim@gmail.com</a></p>
+          <p class="muted">Instagram: <a href="https://www.instagram.com/a.buapim" target="_blank">@a.buapim</a></p>
+          <p class="muted">WhatsApp: <a href="https://wa.me/233547940650" target="_blank">+233 54 794 0650</a></p>
+          <div style="margin-top:10px"><button class="btn primary" onclick="location.href='mailto:akosuaaddaebuapim@gmail.com'">Email Me</button></div>
         </div>
+
         <div class="card">
-          <h3>Request a project</h3>
-          <form onsubmit="event.preventDefault(); alert('Thanks — your request was sent. We will reply on WhatsApp/Email!');">
-            <label class="small">Name</label><input class="input" name="name" placeholder="Your name" required style="width:100%;padding:10px;border-radius:8px;background:#0f0f10;border:1px solid rgba(255,255,255,0.02);color:var(--ink)" />
-            <label class="small" style="margin-top:8px">Email or WhatsApp</label><input class="input" name="contact" placeholder="email or WhatsApp number" />
-            <label class="small" style="margin-top:8px">Brief project description</label>
-            <textarea required placeholder="Tell me what you want" style="width:100%;min-height:120px;padding:10px;border-radius:8px;background:#0f0f10;border:1px solid rgba(255,255,255,0.02);color:var(--ink)"></textarea>
-            <div style="margin-top:10px"><button class="btn-primary" type="submit">Send Request</button></div>
+          <h4>Request a Project</h4>
+          <!-- Formspree example: replace action with your Formspree endpoint -->
+          <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" onsubmit="alert('Thanks — your request was sent. I will reply on WhatsApp or email!');return true;">
+            <label class="small">Your name</label>
+            <input type="text" name="name" required>
+            <label class="small" style="margin-top:8px">Email or WhatsApp</label>
+            <input type="text" name="contact">
+            <label class="small" style="margin-top:8px">Project brief</label>
+            <textarea name="message" required style="min-height:120px"></textarea>
+            <div style="margin-top:10px"><button class="btn primary" type="submit">Send Request</button></div>
           </form>
         </div>
       </div>
@@ -394,30 +369,20 @@
 
   <!-- Footer -->
   <footer class="site-footer">
-    <div style="max-width:1120px;margin:0 auto;padding:8px 18px">
-      <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px">
-        <div style="font-weight:700">© <span id="year"></span> Scribe Haus</div>
-        <div class="small muted">A creative studio founded by <strong>Akosua Addae Buapim</strong></div>
-        <div class="socials">
-          <a href="mailto:akosuaaddaebuapim@gmail.com">Email</a> •
-          <a href="https://www.instagram.com/a.buapim" target="_blank">Instagram</a> •
-          <a href="https://wa.me/233547940650" target="_blank">WhatsApp</a>
-        </div>
-      </div>
+    <div style="max-width:1120px;margin:0 auto;padding:12px 18px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap">
+      <div style="font-weight:700">© <span id="year"></span> Scribe Haus</div>
+      <div class="small muted">Founded by Akosua Addae Buapim</div>
+      <div class="small"><a href="mailto:akosuaaddaebuapim@gmail.com">Email</a> • <a href="https://www.instagram.com/a.buapim" target="_blank">Instagram</a> • <a href="https://wa.me/233547940650" target="_blank">WhatsApp</a></div>
     </div>
   </footer>
 
-  <!-- ---------- Inline JavaScript (all interactive features) ---------- -->
+  <!-- Inline JS (interactive features) -->
   <script>
-    // YEAR
+    // year
     document.getElementById('year').textContent = new Date().getFullYear();
 
-    /* ---------- Affirmation Spinner ---------- */
-    const AFFIRMATIONS = [
-      "I am brave.","I am loved.","I am patient.","I am curious.",
-      "I am creative.","I am strong.","I can ask for help.","I am kind.",
-      "I am capable.","I try new things.","I am joyful.","I respect others."
-    ];
+    // AFFIRMATIONS
+    const AFFIRMATIONS = ["I am brave.","I am loved.","I am patient.","I am curious.","I am creative.","I am strong.","I can ask for help.","I am kind.","I am capable.","I try new things.","I am joyful.","I respect others."];
     function spinAffirmation(){
       const out = document.getElementById('spin-out');
       const btn = document.getElementById('spin-btn');
@@ -425,72 +390,51 @@
       btn.disabled = true;
       out.textContent = "Spinning…";
       setTimeout(()=>{
-        const pick = AFFIRMATIONS[Math.floor(Math.random()*AFFIRMATIONS.length)];
-        out.textContent = pick;
+        out.textContent = AFFIRMATIONS[Math.floor(Math.random()*AFFIRMATIONS.length)];
         btn.disabled = false;
-      }, 800);
+      },700);
     }
 
-    /* ---------- Prompt Generator ---------- */
-    const PROMPTS = [
-      "Draw your dream house and label three rooms.",
-      "Write five lines that begin with 'I imagine...'.",
-      "Invent a superhero and their kindest power.",
-      "Design a book cover for your future self.",
-      "Write a thank-you letter to your future self."
-    ];
-    function newPrompt(outId='prompt-out'){
-      const el = document.getElementById(outId);
-      if(!el) return;
-      el.textContent = PROMPTS[Math.floor(Math.random()*PROMPTS.length)];
-    }
+    // PROMPTS
+    const PROMPTS = ["Draw your dream house and label three rooms.","Write five lines that begin with 'I imagine...'.","Invent a superhero and their kindest power.","Design a book cover for your future self.","Write a thank-you note to your future self."];
+    function newPrompt(id='prompt-out'){ const el = document.getElementById(id); if(!el) return; el.textContent = PROMPTS[Math.floor(Math.random()*PROMPTS.length)]; }
 
-    /* ---------- Quiz (simple 3-step) ---------- */
+    // QUIZ
     const QUIZ = [
-      { q:"Pick a color", a:["Gold","Midnight","Sky","Forest"] },
-      { q:"Pick a power", a:["Creativity","Bravery","Kindness","Wisdom"] },
-      { q:"Pick a vibe", a:["Playful","Calm","Bold","Curious"] }
+      {q:"Pick a color", a:["Gold","Midnight","Sky","Forest"]},
+      {q:"Pick a power", a:["Creativity","Bravery","Kindness","Wisdom"]},
+      {q:"Pick a vibe", a:["Playful","Calm","Bold","Curious"]}
     ];
     const QUIZ_RESULTS = ["The Dreamer ✨","The Warrior 🛡️","The Sage 📖","The Explorer 🌍"];
-    let qStep=0;
-    function startQuiz(){
-      qStep = 0;
-      renderQuiz();
-    }
+    let qStep = 0;
+    function startQuiz(){ qStep=0; renderQuiz(); }
     function renderQuiz(){
-      const mount = document.getElementById('quiz-area');
-      if(!mount) return;
+      const mount = document.getElementById('quiz-area'); if(!mount) return;
       if(qStep >= QUIZ.length){
         const r = QUIZ_RESULTS[Math.floor(Math.random()*QUIZ_RESULTS.length)];
         mount.innerHTML = `<div class="card"><h3>You are: ${r}</h3><p class="small muted">Share or try again!</p><div style="margin-top:10px"><button class="btn" onclick="startQuiz()">Restart</button></div></div>`;
         return;
       }
       const item = QUIZ[qStep];
-      mount.innerHTML = `<div class="card"><h3>${item.q}</h3><div style="display:flex;gap:10px;margin-top:12px;flex-wrap:wrap">${item.a.map(x=>`<button class="btn" onclick="qStep++;renderQuiz()">${x}</button>`).join('')}</div></div>`;
+      mount.innerHTML = `<div class="card"><h3>${item.q}</h3><div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:10px">${item.a.map(x=>`<button class="btn" onclick="qStep++;renderQuiz()">${x}</button>`).join('')}</div></div>`;
     }
 
-    /* ---------- Memory Match (simple) ---------- */
+    // MEMORY MATCH
     const MEMO_ICONS_BASE = ["📚","⭐","🎨","🧩"];
     let memoState = {flipped:[],matched:0,locked:false};
-    function shuffle(arr){
-      for(let i=arr.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[arr[i],arr[j]]=[arr[j],arr[i]]}
-      return arr;
-    }
+    function shuffle(arr){ for(let i=arr.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[arr[i],arr[j]]=[arr[j],arr[i]] } return arr; }
     function buildMemory(){
-      const board = document.getElementById('memory-board');
-      if(!board) return;
-      board.innerHTML = '';
+      const board = document.getElementById('memory-board'); if(!board) return;
+      board.innerHTML='';
       const icons = shuffle([...MEMO_ICONS_BASE, ...MEMO_ICONS_BASE]);
-      memoState = {flipped:[], matched:0, locked:false};
+      memoState = {flipped:[],matched:0,locked:false};
       icons.forEach((icon,idx)=>{
         const btn = document.createElement('button');
-        btn.className='memo-btn';
-        btn.dataset.icon = icon; btn.dataset.idx = idx;
-        btn.textContent = '❒';
-        btn.onclick = () => flipCard(btn);
+        btn.className='memo-btn'; btn.dataset.icon = icon; btn.dataset.idx = idx; btn.textContent='❒';
+        btn.onclick = ()=>flipCard(btn);
         board.appendChild(btn);
       });
-      document.getElementById('memory-status').textContent = '';
+      document.getElementById('memory-status').textContent='';
     }
     function flipCard(btn){
       if(memoState.locked || btn.disabled) return;
@@ -499,59 +443,37 @@
       if(memoState.flipped.length===2){
         memoState.locked=true;
         setTimeout(()=>{
-          const [a,b] = memoState.flipped;
-          if(a.dataset.icon === b.dataset.icon){
-            a.disabled = b.disabled = true;
-            memoState.matched++;
-            if(memoState.matched === MEMO_ICONS_BASE.length){
-              document.getElementById('memory-status').textContent = 'You matched them all! 🎉';
-            }
-          } else {
-            a.textContent = b.textContent = '❒';
-          }
-          memoState.flipped = []; memoState.locked=false;
-        }, 600);
+          const [a,b]=memoState.flipped;
+          if(a.dataset.icon===b.dataset.icon){ a.disabled=b.disabled=true; memoState.matched++; if(memoState.matched===MEMO_ICONS_BASE.length){ document.getElementById('memory-status').textContent='You matched them all! 🎉'; } }
+          else { a.textContent=b.textContent='❒'; }
+          memoState.flipped=[]; memoState.locked=false;
+        },600);
       }
     }
 
-    /* ---------- Word Scramble ---------- */
+    // SCRAMBLE
     const SCRAMBLE_WORDS = ["imagine","wonder","brave","create","storybook","joyful"];
-    let currentSolution = '';
-    function scrambleWord(){
-      const out = document.getElementById('scramble-out');
-      const pick = SCRAMBLE_WORDS[Math.floor(Math.random()*SCRAMBLE_WORDS.length)];
-      currentSolution = pick;
-      const scrambled = pick.split('').sort(()=>Math.random()-0.5).join(' ');
-      out.textContent = scrambled;
-    }
-    function revealSolution(){
-      const out = document.getElementById('scramble-out');
-      if(!out) return;
-      out.textContent = currentSolution || 'No word yet — press Shuffle';
-    }
+    let currentSolution='';
+    function scrambleWord(){ const out = document.getElementById('scramble-out'); const pick = SCRAMBLE_WORDS[Math.floor(Math.random()*SCRAMBLE_WORDS.length)]; currentSolution = pick; out.textContent = pick.split('').sort(()=>Math.random()-0.5).join(' '); }
+    function revealSolution(){ const out = document.getElementById('scramble-out'); out.textContent = currentSolution || 'Press Shuffle'; }
 
-    /* ---------- 5-minute Timer ---------- */
-    let timerInterval = null;
+    // 5-minute timer
+    let timerInterval=null;
     function startTimer(seconds){
       stopTimer();
-      const display = document.getElementById('timer-display');
-      let s = seconds;
+      const display = document.getElementById('timer-display'); if(!display) return;
+      let s=seconds;
       timerInterval = setInterval(()=>{
-        const mm = String(Math.floor(s/60)).padStart(2,'0');
-        const ss = String(s%60).padStart(2,'0');
-        display.textContent = `00:${mm}:${ss}`;
-        s--;
-        if(s<0){ clearInterval(timerInterval); timerInterval=null; display.textContent = 'Done! ✨'; }
+        const mm = String(Math.floor(s/60)).padStart(2,'0'); const ss = String(s%60).padStart(2,'0');
+        display.textContent = `00:${mm}:${ss}`; s--;
+        if(s<0){ clearInterval(timerInterval); timerInterval=null; display.textContent='Done! ✨'; }
       },1000);
     }
-    function stopTimer(){ if(timerInterval){ clearInterval(timerInterval); timerInterval=null; document.getElementById('timer-display').textContent='00:05:00'; } }
+    function stopTimer(){ if(timerInterval){ clearInterval(timerInterval); timerInterval=null; const display=document.getElementById('timer-display'); if(display) display.textContent='00:05:00'; } }
 
-    // Init small things
+    // Init
     document.addEventListener('DOMContentLoaded', ()=>{
-      // seed prompt + memory + quiz
-      newPrompt('prompt-out');
-      buildMemory();
-      startQuiz();
+      newPrompt('prompt-out'); buildMemory(); startQuiz();
     });
   </script>
 </body>
