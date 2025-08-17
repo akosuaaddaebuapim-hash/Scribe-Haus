@@ -1,185 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Scribe Haus — Stories • Design • Joy</title>
-<style>
-  :root{
-    --bg:#ffffff; --ink:#0f172a; --muted:#475569; --line:#e2e8f0;
-    --amber:#f59e0b; --amber-100:#fef3c7; --sky-100:#e0f2fe; --violet-100:#ede9fe;
-  }
-  *{box-sizing:border-box;margin:0;padding:0;}
-  html{scroll-behavior:smooth;}
-  body{font-family:Inter,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6;overflow-x:hidden;}
-  a{text-decoration:none;color:inherit;}
-  .container{max-width:1120px;margin:0 auto;padding:0 16px;}
-  header{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:50;backdrop-filter:saturate(180%) blur(8px);}
-  .nav{display:flex;justify-content:space-between;align-items:center;padding:12px 0;}
-  .nav ul{display:flex;list-style:none;gap:16px;}
-  .nav ul li a{font-weight:600;padding:6px 8px;border-radius:8px;transition:background 0.3s;}
-  .nav ul li a:hover{background:var(--amber-100);}
-  .logo{height:40px;width:40px;border-radius:12px;background:var(--amber);display:flex;align-items:center;justify-content:center;color:#111827;font-weight:900;cursor:pointer;}
-  .btn{padding:12px 18px;border-radius:14px;font-weight:700;border:1px solid var(--line);background:#fff;cursor:pointer;transition:transform 0.2s, box-shadow 0.2s;}
-  .btn:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(0,0,0,0.08);}
-  .btn.primary{background:var(--amber);color:#111827;border-color:#d97706;}
-  .section{padding:64px 0;opacity:0;transform:translateY(30px);transition:opacity 0.8s ease-out, transform 0.8s ease-out;}
-  .section.visible{opacity:1;transform:translateY(0);}
-  h1,h2,h3{margin-bottom:16px;}
-  p.lead{color:var(--muted);}
-  .books,.portfolio-grid{display:grid;gap:24px;}
-  @media(min-width:720px){.books,.portfolio-grid{grid-template-columns:repeat(2,1fr);}}
-  @media(min-width:1040px){.books,.portfolio-grid{grid-template-columns:repeat(3,1fr);}}
-  .card{border:1px solid var(--line);border-radius:18px;background:#fff;padding:16px;transition:transform 0.3s, box-shadow 0.3s;}
-  .card:hover{transform:translateY(-4px);box-shadow:0 12px 30px rgba(0,0,0,0.1);}
-  img{width:100%;border-radius:12px;}
-  input,textarea{width:100%;border:1px solid var(--line);border-radius:14px;padding:12px 14px;font-family:inherit;margin-top:12px;}
-  textarea{min-height:120px;}
-  footer{border-top:1px solid var(--line);padding:24px 0;text-align:center;font-size:14px;color:var(--muted);}
-  .affirmation{margin-top:30px;font-size:24px;font-weight:600;color:var(--ink);max-width:600px;margin-left:auto;margin-right:auto;}
-  /* Slider */
-  .slider{position:relative;overflow:hidden;border-radius:18px;margin-bottom:32px;}
-  .slides{display:flex;transition:transform 0.8s ease;}
-  .slide{min-width:100%;box-sizing:border-box;display:flex;flex-direction:column;align-items:center;justify-content:center;background:#fef3c7;padding:40px;}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scribe Haus | Founded by Akosua Addae Buapim</title>
+  <meta name="description" content="Scribe Haus - Books, writing, editing, graphic design, and creative services founded by Akosua Addae Buapim.">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <!-- Navigation -->
+  <header>
+    <nav class="navbar">
+      <div class="logo">Scribe Haus</div>
+      <ul class="nav-links">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="books.html">Books</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
 
-<header>
-  <div class="container nav">
-    <div class="brand">
-      <a href="#home"><div class="logo">SH</div></a>
-      <span>Scribe Haus</span>
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Welcome to <span>Scribe Haus</span></h1>
+      <p>Where words meet design — books, creativity, and professional services.</p>
+      <a href="services.html" class="btn">Explore Services</a>
     </div>
-    <ul>
-      <li><a href="#home">Home</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#services">Services</a></li>
-      <li><a href="#books">Books</a></li>
-      <li><a href="#portfolio">Portfolio</a></li>
-      <li><a href="#blog">Akos’ Corner</a></li>
-      <li><a href="#community">Community Wall</a></li>
-      <li><a href="#fun">Fun Zone</a></li>
-      <li><a href="#affirmation">Affirmation Generator</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </div>
-</header>
+  </section>
 
-<section id="home" class="section visible">
-  <div class="container" style="text-align:center;">
-    <h1>Words. Design. Inspiration.</h1>
-    <p class="lead">Joyful children’s books, affirmations, and creative designs by Akosua Addae Buapim.</p>
-    <a href="#books" class="btn primary">Explore Books</a>
-    <a href="#services" class="btn">Our Services</a>
-    <!-- Hero Slider -->
-    <div class="slider">
-      <div class="slides">
-        <div class="slide"><h2>Tiny Thoughts, Big Power</h2><p>Daily affirmations for little learners.</p></div>
-        <div class="slide"><h2>Affirmation Posters</h2><p>Printable positivity for every room.</p></div>
-        <div class="slide"><h2>Custom Name Books</h2><p>Personalized affirmations featuring your child’s name.</p></div>
+  <!-- Services Preview -->
+  <section class="services-preview">
+    <h2>What We Offer</h2>
+    <div class="service-cards">
+      <div class="card">
+        <h3>Writing & Editing</h3>
+        <p>From CVs to books, we polish your words and ideas.</p>
+      </div>
+      <div class="card">
+        <h3>Graphic Design</h3>
+        <p>Book covers, flyers, social media — eye-catching designs.</p>
+      </div>
+      <div class="card">
+        <h3>Books & Publishing</h3>
+        <p>Discover our children’s affirmations and upcoming works.</p>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section id="about" class="section">
-  <div class="container">
-    <h2>About Akosua Addae Buapim</h2>
-    <p class="lead">Akosua is a gifted author, visual storyteller, and imaginative designer whose creations spark joy in both children and adults.</p>
-    <p class="lead">Her mission: fill bookshelves—and hearts—with positivity.</p>
-  </div>
-</section>
+  <!-- Featured Book -->
+  <section class="featured-book">
+    <h2>Featured Book</h2>
+    <img src="images/the_wilde_companion.png" alt="The Wilde Companion Book Cover">
+    <p><em>The Wilde Companion</em> — Coming Soon!</p>
+    <a href="books.html" class="btn">See More</a>
+  </section>
 
-<section id="services" class="section">
-  <div class="container">
-    <h2>Services</h2>
-    <div class="books">
-      <div class="card"><h3>Books & Publishing</h3><p>Children’s affirmations, motivational writing, editing.</p></div>
-      <div class="card"><h3>Design</h3><p>Flyers, posters, branding, book covers.</p></div>
-      <div class="card"><h3>Career Services</h3><p>CVs, cover letters, personal statements.</p></div>
+  <!-- Testimonials -->
+  <section class="testimonials">
+    <h2>What People Say</h2>
+    <div class="testimonial-cards">
+      <div class="t-card">
+        <p>"Scribe Haus transformed my CV — I landed interviews instantly!"</p>
+        <span>- Happy Client</span>
+      </div>
+      <div class="t-card">
+        <p>"Her book designs are stunning and professional!"</p>
+        <span>- Reader</span>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section id="books" class="section" style="background:#f8fafc;">
-  <div class="container">
-    <h2>Books & Shop</h2>
-    <div class="books">
-      <div class="card"><img src="https://via.placeholder.com/300x400?text=Book+1" alt="Book 1"><h3>Tiny Thoughts, Big Power</h3></div>
-      <div class="card"><img src="https://via.placeholder.com/300x400?text=Book+2" alt="Book 2"><h3>Affirmation Posters (Set)</h3></div>
-      <div class="card"><img src="https://via.placeholder.com/300x400?text=Book+3" alt="Book 3"><h3>Custom Name Books</h3></div>
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Scribe Haus | Founded by Akosua Addae Buapim</p>
+    <div class="socials">
+      <a href="mailto:akosuaaddaebuapim@gmail.com">Email</a> |
+      <a href="https://www.instagram.com/a.buapim">Instagram</a> |
+      <a href="https://wa.me/233547940650">WhatsApp</a>
     </div>
-  </div>
-</section>
-
-<section id="portfolio" class="section">
-  <div class="container">
-    <h2>Portfolio</h2>
-    <div class="portfolio-grid">
-      <div class="card"><img src="https://via.placeholder.com/300x200?text=Design+1"><p>Flyer Design</p></div>
-      <div class="card"><img src="https://via.placeholder.com/300x200?text=Design+2"><p>Book Cover</p></div>
-      <div class="card"><img src="https://via.placeholder.com/300x200?text=Design+3"><p>Branding Project</p></div>
-    </div>
-  </div>
-</section>
-
-<section id="blog" class="section" style="background:#f8fafc;">
-  <div class="container">
-    <h2>Akos’ Corner</h2>
-    <div class="books">
-      <div class="card"><h3>Motherhood</h3><p>Stories and Kyrie’s milestones.</p></div>
-      <div class="card"><h3>Lifestyle</h3><p>Books, films, productivity tips.</p></div>
-    </div>
-  </div>
-</section>
-
-<section id="community" class="section">
-  <div class="container">
-    <h2>Community Wall</h2>
-    <p class="lead">Weekly inspirational quotes and user submissions.</p>
-  </div>
-</section>
-
-<section id="fun" class="section" style="background:#f8fafc;">
-  <div class="container">
-    <h2>Fun Zone</h2>
-    <p class="lead">Word of the Week, polls, quizzes, freebies.</p>
-  </div>
-</section>
-
-<section id="affirmation" class="section">
-  <div class="container" style="text-align:center;">
-    <h2>Scribe Haus Affirmation Generator</h2>
-    <p class="lead">Enter your name to get a special affirmation!</p>
-    <input type="text" id="userName" placeholder="Your name here">
-    <br>
-    <button onclick="generateAffirmation()" class="btn primary">Generate Affirmation</button>
-    <div class="affirmation" id="affirmationText">✨ Your affirmation will appear here ✨</div>
-    <button onclick="copyAffirmation()" style="display:none;" id="copyBtn" class="btn">Copy to Clipboard</button>
-  </div>
-</section>
-
-<section id="contact" class="section">
-  <div class="container">
-    <h2>Contact</h2>
-    <form onsubmit="event.preventDefault(); alert('This is a demo form. Connect it to email later.')">
-      <input type="text" placeholder="Your Name" required>
-      <input type="email" placeholder="Email" required>
-      <textarea placeholder="Your Message"></textarea>
-      <button type="submit" class="btn primary">Send Message</button>
-    </form>
-  </div>
-</section>
-
-<footer>
-  <p>© <span id="year"></span> Scribe Haus • Made with ❤️ by Akosua Addae Buapim</p>
-</footer>
-
-<script>
-document.getElementById('year').textContent=new Date().getFullYear();
-const affirmations=["you are brave and confident.","you are loved and cherished.","you are growing and learning every day.","you try new things with courage.","you are kind and thoughtful.","you are smart and capable.","you are important and valued.","you are patient and calm.","you are curious and creative.","you are strong and resilient."];
-const colors=["#fef3c7","#e0f2fe","#ede9fe","#ffe4e6","#dcfce7","#fffbeb"];
-function generateAffirmation(){
-  const name=document.getElementById("userName").value.trim()||"You";
-  const index=Math.floor(Math.random()*affirm
+  </footer>
+</body>
+  </html>
