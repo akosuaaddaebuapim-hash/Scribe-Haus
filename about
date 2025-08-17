@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Scribe Haus | About</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <div class="logo">Scribe Haus</div>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html" class="active">About</a></li>
+    <li><a href="services.html">Services</a></li>
+    <li><a href="books.html">Books</a></li>
+    <li><a href="blog.html">Blog</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</header>
+
+<section class="about">
+<h1>About Akosua Addae Buapim</h1>
+<p>Akosua is a gifted author, visual storyteller, and imaginative designer whose creations spark joy in both children and adults. Through Scribe Haus, she blends warm words with vibrant visuals to inspire confidence, kindness, and creativity in young readers.</p>
+</section>
+
+<footer>
+<p>© 2025 Scribe Haus | Akosua Addae Buapim</p>
+</footer>
+</body>
+</html>
