@@ -306,7 +306,81 @@
     "name":"Scribe Haus",
     "url":"https://akosuaaddaebuapim-hash.github.io/Scribe-Haus/",
     "logo":"https://akosuaaddaebuapim-hash.github.io/Scribe-Haus/images/logo.png",
-    "founder":"Akosua Addae Buapim",
+    "founder":"Akosua Addae Buapim",<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Scribe Haus — Affirmation Generator</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg: #ffffff; --ink:#0f172a; --muted:#475569; --line:#e2e8f0;
+      --amber:#f59e0b; --amber-100:#fef3c7; --sky-100:#e0f2fe;
+      --colors: #fef3c7, #e0f2fe, #ede9fe, #ffe4e6, #dcfce7, #fffbeb;
+    }
+    *{box-sizing:border-box;}
+    body{margin:0;padding:50px;font-family:Inter,system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif;text-align:center;transition: background 0.5s;}
+    h1{font-size:40px;margin-bottom:12px;color:#92400e;}
+    p.lead{font-size:18px;color:var(--muted);}
+    input{padding:12px 14px;font-size:16px;border-radius:14px;border:1px solid var(--line);margin-top:12px;width:200px;}
+    button{padding:14px 22px;font-size:16px;border-radius:14px;border:none;background:var(--amber);color:#111827;font-weight:700;cursor:pointer;margin-top:20px;}
+    .affirmation{margin-top:30px;font-size:24px;font-weight:600;color:var(--ink);max-width:600px;margin-left:auto;margin-right:auto;}
+  </style>
+</head>
+<body>
+
+<h1>Scribe Haus Affirmation Generator</h1>
+<p class="lead">Enter your name to get a special affirmation just for you!</p>
+
+<input type="text" id="userName" placeholder="Your name here">
+<br>
+<button onclick="generateAffirmation()">Generate Affirmation</button>
+
+<div class="affirmation" id="affirmation">✨ Your affirmation will appear here ✨</div>
+<button onclick="copyAffirmation()" style="margin-top:16px; display:none;" id="copyBtn">Copy to Clipboard</button>
+
+<script>
+const affirmations = [
+  "you are brave and confident.",
+  "you are loved and cherished.",
+  "you are growing and learning every day.",
+  "you try new things with courage.",
+  "you are kind and thoughtful.",
+  "you are smart and capable.",
+  "you are important and valued.",
+  "you are patient and calm.",
+  "you are curious and creative.",
+  "you are strong and resilient."
+];
+
+const colors = ["#fef3c7", "#e0f2fe", "#ede9fe", "#ffe4e6", "#dcfce7", "#fffbeb"];
+
+function generateAffirmation() {
+  const name = document.getElementById("userName").value.trim() || "You";
+  const index = Math.floor(Math.random() * affirmations.length);
+  const affirmationText = `${name}, ${affirmations[index]}`;
+  
+  document.getElementById("affirmation").textContent = affirmationText;
+
+  // Change background color randomly
+  const colorIndex = Math.floor(Math.random() * colors.length);
+  document.body.style.background = colors[colorIndex];
+
+  // Show copy button
+  document.getElementById("copyBtn").style.display = "inline-block";
+}
+
+function copyAffirmation() {
+  const text = document.getElementById("affirmation").textContent;
+  navigator.clipboard.writeText(text).then(() => {
+    alert("Affirmation copied to clipboard! 🌟");
+  });
+}
+</script>
+
+</body>
+</html><a href="affirmation.html" class="btn primary">Affirmation Generator</a>
     "sameAs":[
       "mailto:akosuaaddaebuapim@gmail.com",
       "https://www.instagram.com/a.buapim",
