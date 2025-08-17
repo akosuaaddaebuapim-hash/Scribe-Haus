@@ -11,8 +11,8 @@
   <meta property="og:description" content="Books, custom projects, graphic design, CV services, and a playful interactive zone." />
   <meta property="og:image" content="images/og-cover.jpg" />
   <meta name="twitter:card" content="summary_large_image" />
+  <!-- Animated, glossy hero styles -->
   <style>
-    /* ---------- Palette & Base ---------- */
     :root{
       --bg:#080707;
       --panel:#0f0f10;
@@ -53,21 +53,100 @@
     nav.menu a:hover{background:var(--glass);color:var(--bronze-2)}
     .cta{background:linear-gradient(90deg,var(--bronze),var(--bronze-2));padding:8px 12px;border-radius:10px;color:#111;font-weight:800}
 
-    /* ---------- Hero ---------- */
-    .hero{max-width:1200px;margin:26px auto;padding:26px;border-radius:16px;background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.003));border:1px solid var(--line);display:grid;grid-template-columns:1fr 360px;gap:20px}
-    @media(max-width:980px){.hero{grid-template-columns:1fr;padding:18px}}
-    .hero h1{font-family: "Playfair Display", Georgia, serif;font-size:40px;color:var(--bronze-2);margin:0}
-    .lead{color:var(--muted);margin-top:10px}
-    .hero .actions{margin-top:16px;display:flex;gap:10px;flex-wrap:wrap}
-    .btn{padding:10px 14px;border-radius:10px;border:1px solid rgba(255,255,255,0.03);cursor:pointer;background:transparent;color:inherit;font-weight:700}
-    .btn.primary{background:linear-gradient(90deg,var(--bronze),var(--bronze-2));color:#080707}
-    .btn.ghost{border:1px dashed rgba(255,255,255,0.03);color:var(--bronze-2)}
-
-    .covers{display:flex;flex-direction:column;gap:14px}
-    .cover-card{display:flex;gap:12px;align-items:center;padding:10px;border-radius:10px;background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.004));border:1px solid rgba(255,255,255,0.02)}
-    .cover-card img{width:92px;height:auto;border-radius:8px;box-shadow:0 18px 36px rgba(0,0,0,0.6)}
-    .cover-meta strong{display:block}
-    .badge{display:inline-block;padding:6px 8px;border-radius:999px;background:rgba(0,0,0,0.35);color:var(--bronze-2);font-weight:700;border:1px solid rgba(255,255,255,0.02);font-size:12px}
+    /* ---------- Animated Glossy Hero ---------- */
+    .animated-hero {
+      animation: heroBgMove 8s linear infinite;
+      background: linear-gradient(135deg, #b07a2f 0%, #91c2ff 50%, #c29748 100%);
+      background-size: 400% 400%;
+      box-shadow: 0 8px 32px rgba(144,194,255,0.10);
+      position: relative;
+      overflow: hidden;
+      max-width:1200px;
+      margin:26px auto;
+      padding:36px 26px 32px 26px;
+      border-radius:24px;
+      border:1px solid var(--line);
+      display:block;
+      opacity: 0;
+      animation: fadeInHero 1.5s ease-in forwards, heroBgMove 8s linear infinite;
+    }
+    @keyframes heroBgMove {
+      0% {background-position:0% 50%;}
+      50% {background-position:100% 50%;}
+      100% {background-position:0% 50%;}
+    }
+    @keyframes fadeInHero {
+      to {opacity: 1;}
+    }
+    .hero-title {
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: 48px;
+      color: #ffd700;
+      text-shadow: 2px 2px 8px rgba(144,194,255,0.25);
+      letter-spacing: 1px;
+      margin: 0 0 10px 0;
+    }
+    .hero-desc {
+      font-size: 1.35em;
+      color: #f3efe8;
+      margin-top: 16px;
+      margin-bottom: 22px;
+      text-shadow: 0 1px 6px rgba(176,122,47,0.15);
+      font-family: "Inter", system-ui, sans-serif;
+    }
+    .rainbow-text {
+      background: linear-gradient(90deg, #ffd700, #91c2ff, #ff8c00, #ff69b4, #b07a2f);
+      background-size: 200% auto;
+      color: #fff;
+      font-weight: bold;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: rainbowMove 3s linear infinite;
+    }
+    @keyframes rainbowMove {
+      to {background-position:200% center;}
+    }
+    .hero.actions {
+      margin-top: 22px;
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    /* Glossy button effect */
+    .glossy-btn {
+      background: linear-gradient(90deg, #ffd700 0%, #91c2ff 100%);
+      color: #080707;
+      border: none;
+      box-shadow: 0 2px 12px rgba(144,194,255,0.15), 0 1px 0 #fff inset;
+      position: relative;
+      transition: transform 0.2s, box-shadow 0.2s;
+      font-weight: 800;
+      overflow: hidden;
+      border-radius: 14px;
+      padding: 12px 22px;
+      font-size: 18px;
+    }
+    .glossy-btn:after {
+      content: "";
+      position: absolute;
+      left: 0; top: 0;
+      width: 100%; height: 100%;
+      background: linear-gradient(120deg, rgba(255,255,255,0.40) 0%, rgba(255,255,255,0.15) 60%);
+      opacity: 0.6;
+      pointer-events: none;
+      border-radius: inherit;
+      transition: opacity 0.2s;
+    }
+    .glossy-btn:hover, .glossy-btn:focus {
+      transform: scale(1.06);
+      box-shadow: 0 6px 24px rgba(144,194,255,0.25);
+      outline: none;
+    }
+    .glossy-btn:active:after {
+      opacity: 0.9;
+    }
+    .small{font-size:13px;color:var(--muted)}
+    @media(max-width:980px){.animated-hero{padding:18px}}
 
     /* ---------- Main content ---------- */
     main{max-width:1120px;margin:28px auto;padding:0 18px}
@@ -86,27 +165,17 @@
     .play-card{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;min-height:150px}
     .spin-output{font-size:20px;font-weight:800;color:var(--bronze-2)}
     .prompt{font-weight:700;color:var(--accent)}
-    .small{font-size:13px;color:var(--muted)}
-
-    /* memory */
+    /* ...rest from original CSS... */
     .memory-board{display:flex;flex-wrap:wrap;gap:8px;justify-content:center}
     .memo-btn{min-width:56px;min-height:56px;border-radius:8px;border:1px solid rgba(255,255,255,0.03);background:rgba(255,255,255,0.02);font-size:20px}
-
-    /* contact */
     .contact-grid{display:grid;gap:14px}
     @media(min-width:920px){.contact-grid{grid-template-columns:1fr 420px}}
-
-    /* footer */
     footer.site-footer{margin-top:30px;padding:20px;border-top:1px solid rgba(255,255,255,0.02);text-align:center;color:var(--muted)}
-
-    /* input styles */
     input[type="text"], input[type="email"], textarea{width:100%;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.03);background:rgba(255,255,255,0.01);color:inherit}
-
-    /* tiny responsive */
     @media(max-width:560px){
       .nav{padding:10px}
       .brand .title{font-size:16px}
-      .hero{grid-template-columns:1fr}
+      .animated-hero{padding:12px}
     }
   </style>
 </head>
@@ -116,7 +185,6 @@
   <header class="site-header" role="banner">
     <div class="nav">
       <div class="brand">
-        <!-- if you have uploaded images/logo.svg it will show, otherwise the fallback mark text appears -->
         <img src="images/logo.svg" alt="Scribe Haus logo" style="width:48px;height:48px;border-radius:10px;display:block" onerror="this.style.display='none';document.querySelector('.mark').style.display='grid'">
         <div class="mark" style="display:none">SH</div>
         <div>
@@ -137,66 +205,26 @@
     </div>
   </header>
 
-  <!-- Hero -->
-  <div class="hero" role="region" aria-label="Introduction">
+  <!-- Hero (animated, glossy, colorful) -->
+  <div class="animated-hero" role="region" aria-label="Introduction">
     <div>
-      <h1>Scribe Haus — Where Words, Design & Play Collide</h1>
-      <p class="lead muted">We craft children’s books, guided journals, and bespoke creative projects with a warm bronze-gold fantasy touch. Practical + playful. Professional + human.</p>
+      <h1 class="hero-title">Scribe Haus — Where Words, Design & Play Collide</h1>
+      <p class="lead muted hero-desc">
+        Step inside a world where golden dreams and playful stories leap from every page.<br>
+        At Scribe Haus, we blend vibrant design, heartfelt words, and a touch of fantasy magic.<br>
+        Our children’s books and guided journals shimmer with possibility — crafted for wonder, growth, and imagination.
+        <span class="rainbow-text">Let your story shine!</span>
+      </p>
       <div class="hero actions">
-        <button class="btn primary" onclick="document.getElementById('books').scrollIntoView({behavior:'smooth'})">See Books</button>
-        <button class="btn" onclick="document.getElementById('play').scrollIntoView({behavior:'smooth'})">Play Zone</button>
-        <button class="btn" onclick="document.getElementById('services').scrollIntoView({behavior:'smooth'})">Hire the Studio</button>
+        <button class="btn primary glossy-btn" onclick="document.getElementById('books').scrollIntoView({behavior:'smooth'})">See Books</button>
+        <button class="btn glossy-btn" onclick="document.getElementById('play').scrollIntoView({behavior:'smooth'})">Play Zone</button>
+        <button class="btn glossy-btn" onclick="document.getElementById('services').scrollIntoView({behavior:'smooth'})">Hire the Studio</button>
       </div>
-      <p class="small" style="margin-top:10px">Psst — if you want a bespoke kids' book, I can personalize names, dedications, and photos. Message me below ❤️</p>
-    </div>
-
-    <aside class="covers" aria-hidden="false">
-      <!-- Book 1 -->
-      <div class="cover-card">
-        <img src="images/file_the_wilde_companion.png" alt="The Wilde Companion cover" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
-        <div style="display:none;padding:10px;border-radius:8px;background:linear-gradient(180deg,rgba(255,255,255,0.01),transparent)" class="img-placeholder">The Wilde Companion</div>
-        <div class="cover-meta">
-          <strong>The Wilde Companion</strong>
-          <div class="small muted" style="margin-top:6px">A vintage-inspired journal of quotes, fun facts, and reflection prompts.</div>
-          <div style="margin-top:8px"><span class="badge">Journal</span></div>
-        </div>
-      </div>
-
-      <!-- Book 2 -->
-      <div class="cover-card">
-        <img src="images/file_tiny_thoughts_big_power.png" alt="Tiny Thoughts, Big Power cover" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
-        <div style="display:none;padding:10px;border-radius:8px;background:linear-gradient(180deg,rgba(255,255,255,0.01),transparent)" class="img-placeholder">Tiny Thoughts</div>
-        <div class="cover-meta">
-          <strong>Tiny Thoughts, Big Power</strong>
-          <div class="small muted" style="margin-top:6px">Affirmations and prompts to help little hearts grow—perfect for parents and classrooms.</div>
-          <div style="margin-top:8px"><span class="badge">Children</span></div>
-        </div>
-      </div>
-    </aside>
-  </div>
-  <!-- Replace the relevant section in your homepage code with this block to show both book covers with their descriptions -->
-
-<section id="books" class="block" aria-labelledby="books-title">
-  <h2 id="books-title">Books & Journals</h2>
-  <div class="cols cols-2">
-    <div class="card">
-      <h3>The Wilde Companion</h3>
-      <img src="images/file_the_wilde_companion.png" alt="The Wilde Companion book cover" style="width:180px;margin:12px 0" loading="lazy" onerror="this.style.display='none'">
-      <p class="muted">
-        The cover of "The Wilde Companion" features a vintage parchment background with elegant, classic design details. Ornate flourishes decorate each corner and a symmetrical motif sits beneath the boldly lettered title, giving the journal a timeless and sophisticated feel.
+      <p class="small" style="margin-top:10px">
+        Psst — want a custom kids' book with your own names, dedications, or photos? Drop me a message below ❤️
       </p>
-      <div style="margin-top:10px"><button class="btn primary" onclick="alert('Preorder interest noted — thank you!')">Preorder Interest</button></div>
-    </div>
-    <div class="card">
-      <h3>Tiny Thoughts, Big Power</h3>
-      <img src="images/file_tiny_thoughts_big_power.png" alt="Tiny Thoughts, Big Power book cover" style="width:180px;margin:12px 0" loading="lazy" onerror="this.style.display='none'">
-      <p class="muted">
-        The cover of "Tiny Thoughts, Big Power" is warm and cheerful, designed for children. It shows a young child on a colorful playmat, surrounded by playful illustrations of smiling clouds, stars, and rainbows. The title is prominently displayed in bold letters, and the subtitle reads "A Book of Positive Affirmations for Little Leaders" by Akosua Addae Buapim. The overall look is inviting and uplifting, reflecting the book’s positive themes.
-      </p>
-      <div style="margin-top:10px"><button class="btn" onclick="alert('Thanks — you will be notified on launch!')">Subscribe for Launch</button></div>
     </div>
   </div>
-</section>
 
   <main>
     <!-- About -->
@@ -271,7 +299,6 @@
     <section id="play" class="block" aria-labelledby="play-title">
       <h2 id="play-title">Play Zone — Short & Delightful</h2>
       <p class="small muted">Mini-tools for 2–99 year olds: quick prompts, affirmations, memory games, scrambles, and a 5-minute creative sprint.</p>
-
       <div class="play-grid" style="margin-top:14px">
         <!-- Affirmation Spinner -->
         <div class="card play-card">
@@ -280,7 +307,6 @@
           <div><button id="spin-btn" class="btn primary" onclick="spinAffirmation()">Spin</button></div>
           <div class="small muted">Tap as many times as you like ✨</div>
         </div>
-
         <!-- Prompt generator -->
         <div class="card play-card">
           <h3>Creative Prompt</h3>
@@ -288,14 +314,12 @@
           <div><button class="btn" onclick="newPrompt('prompt-out')">New Prompt</button></div>
           <div class="small muted">Use for 5-minute drawing or quick writing sprints.</div>
         </div>
-
         <!-- Mini quiz -->
         <div class="card play-card">
           <h3>Mini Quiz</h3>
           <div id="quiz-area" class="small">Press Start — just 3 questions</div>
           <div><button class="btn primary" onclick="startQuiz()">Start Quiz</button></div>
         </div>
-
         <!-- Memory game -->
         <div class="card play-card">
           <h3>Memory Match</h3>
@@ -303,7 +327,6 @@
           <div id="memory-status" class="small muted" style="margin-top:8px"></div>
           <div style="margin-top:10px"><button class="btn" onclick="buildMemory()">New Game</button></div>
         </div>
-
         <!-- Scramble -->
         <div class="card play-card">
           <h3>Word Scramble</h3>
@@ -313,7 +336,6 @@
             <button class="btn" onclick="revealSolution()">Reveal</button>
           </div>
         </div>
-
         <!-- 5-min timer -->
         <div class="card play-card">
           <h3>5-Minute Sprint</h3>
@@ -339,7 +361,6 @@
           </div>
           <p class="small muted" style="margin-top:8px">Upload printable files to <code>/files/</code> in your repo to activate downloads.</p>
         </div>
-
         <div class="card">
           <h4>For Adults</h4>
           <div class="files-list">
@@ -372,10 +393,8 @@
           <p class="muted">WhatsApp: <a href="https://wa.me/233547940650" target="_blank">+233 54 794 0650</a></p>
           <div style="margin-top:10px"><button class="btn primary" onclick="location.href='mailto:akosuaaddaebuapim@gmail.com'">Email Me</button></div>
         </div>
-
         <div class="card">
           <h4>Request a Project</h4>
-          <!-- Formspree example: replace action with your Formspree endpoint -->
           <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" onsubmit="alert('Thanks — your request was sent. I will reply on WhatsApp or email!');return true;">
             <label class="small">Your name</label>
             <input type="text" name="name" required>
@@ -445,7 +464,7 @@
     // MEMORY MATCH
     const MEMO_ICONS_BASE = ["📚","⭐","🎨","🧩"];
     let memoState = {flipped:[],matched:0,locked:false};
-    function shuffle(arr){ for(let i=arr.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[arr[i],arr[j]]=[arr[j],arr[i]] } return arr; }
+    function shuffle(arr){ for(let i=arr.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[arr[i],arr[j]=arr[j],arr[i]] } return arr; }
     function buildMemory(){
       const board = document.getElementById('memory-board'); if(!board) return;
       board.innerHTML='';
