@@ -1,87 +1,318 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Scribe Haus | Founded by Akosua Addae Buapim</title>
-  <meta name="description" content="Scribe Haus - Books, writing, editing, graphic design, and creative services founded by Akosua Addae Buapim.">
-  <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Scribe Haus — Creative Studio • Books • Design</title>
+
+  <!-- SEO -->
+  <meta name="description" content="Scribe Haus — a creative studio for books, journals, design, and words that work. Founded by Akosua Addae Buapim. Explore The Wilde Companion, Children’s Affirmations, and bespoke creative services." />
+  <meta name="keywords" content="Scribe Haus, Akosua Addae Buapim, children's books, affirmations, journals, graphic design, writing, editing, CVs, cover letters, creative studio" />
+  <meta name="author" content="Scribe Haus" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Scribe Haus — Creative Studio • Books • Design" />
+  <meta property="og:description" content="Books, journals, and creative services that inspire. Founded by Akosua Addae Buapim." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://akosuaaddaebuapim-hash.github.io/Scribe-Haus/" />
+  <meta property="og:image" content="https://akosuaaddaebuapim-hash.github.io/Scribe-Haus/images/og-cover.jpg" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Scribe Haus — Creative Studio • Books • Design" />
+  <meta name="twitter:description" content="Books, journals, and creative services that inspire. Founded by Akosua Addae Buapim." />
+  <meta name="twitter:image" content="https://akosuaaddaebuapim-hash.github.io/Scribe-Haus/images/og-cover.jpg" />
+
+  <!-- Brand Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;800&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg:#0b0b0d; --panel:#141417; --ink:#f5f5f5; --muted:#bdbdbd;
+      --gold:#d4af37; --gold-2:#f0d98a; --line:#27272a; --shadow:0 12px 40px rgba(212,175,55,.15);
+      --radius:18px;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;scroll-behavior:smooth}
+    body{font-family:Inter,system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.7}
+
+    /* Layout */
+    .container{max-width:1140px;margin:0 auto;padding:0 20px}
+    section{padding:80px 0}
+    h1,h2,h3{font-family:"Playfair Display",serif;color:var(--gold);letter-spacing:.2px}
+    h1{font-size:56px;line-height:1.1;margin:0 0 12px}
+    h2{font-size:40px;margin:0 0 28px}
+    h3{font-size:22px;margin:14px 0 6px}
+    p.lead{font-size:18px;color:var(--muted)}
+
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;display:block;border-radius:12px}
+
+    /* Header */
+    header{
+      position:sticky;top:0;z-index:50;
+      background:rgba(11,11,13,.85);
+      backdrop-filter:saturate(180%) blur(12px);
+      border-bottom:1px solid var(--line);
+    }
+    .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{height:42px;width:42px;border-radius:999px;background:var(--gold);display:flex;align-items:center;justify-content:center;color:#111;font-weight:800;font-family:"Playfair Display",serif;box-shadow:var(--shadow)}
+    .brand small{display:block;color:var(--gold);opacity:.9;margin-top:-2px}
+    .menu a{margin-left:18px;color:var(--ink);font-weight:600;opacity:.9}
+    .menu a:hover{color:var(--gold)}
+
+    /* Hero */
+    .hero{position:relative;overflow:hidden;background:radial-gradient(1000px 400px at 80% -10%,rgba(212,175,55,.15),transparent), linear-gradient(#0f0f12,#0b0b0d)}
+    .hero .container{display:grid;gap:28px;align-items:center}
+    @media(min-width:960px){.hero .container{grid-template-columns:1.2fr .8fr}}
+    .cta{display:flex;gap:14px;margin-top:20px;flex-wrap:wrap}
+    .btn{display:inline-block;padding:12px 18px;border-radius:999px;border:1px solid var(--gold);font-weight:700}
+    .btn.primary{background:var(--gold);color:#111;box-shadow:var(--shadow)}
+    .btn.ghost{color:var(--gold)}
+    .covers{display:grid;gap:16px}
+    .covers img{border:1px solid var(--line);box-shadow:0 10px 30px rgba(0,0,0,.35)}
+    .badge{position:absolute;top:14px;left:14px;background:var(--gold);color:#111;padding:4px 10px;border-radius:999px;font-weight:700;font-size:12px}
+
+    /* Cards / grids */
+    .grid{display:grid;gap:24px}
+    @media(min-width:760px){.grid-2{grid-template-columns:repeat(2,1fr)}}
+    @media(min-width:1020px){.grid-3{grid-template-columns:repeat(3,1fr)}}
+
+    .card{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:20px;box-shadow:0 12px 30px rgba(0,0,0,.18)}
+    .card:hover{transform:translateY(-4px);transition:transform .2s ease}
+
+    /* Books */
+    .book-card img{border-radius:14px}
+    .tag{display:inline-block;background:var(--gold);color:#111;padding:4px 10px;border-radius:999px;font-size:12px;font-weight:700}
+
+    /* Services */
+    .service-icon{font-size:28px}
+    .service-card .btn{margin-top:10px}
+
+    /* Inspiration */
+    .inspo{position:relative;overflow:hidden}
+    .inspo .card{min-height:220px;display:flex;flex-direction:column;justify-content:center}
+    .quote{font-size:20px}
+    .muted{color:var(--muted)}
+    .shuffle{margin-top:14px}
+
+    /* Contact */
+    .contact h3{margin-top:0}
+    .contact a.link{color:var(--gold);font-weight:700}
+    .socials a{display:inline-block;margin-right:12px;border:1px solid var(--line);padding:10px 14px;border-radius:999px}
+    .socials a:hover{border-color:var(--gold);color:var(--gold)}
+
+    /* Footer */
+    footer{border-top:1px solid var(--line);padding:28px 0;color:#a3a3a3;text-align:center}
+  </style>
 </head>
 <body>
-  <!-- Navigation -->
+
+  <!-- Header -->
   <header>
-    <nav class="navbar">
-      <div class="logo">Scribe Haus</div>
-      <ul class="nav-links">
-        <li><a href="index.html" class="active">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="services.html">Services</a></li>
-        <li><a href="books.html">Books</a></li>
-        <li><a href="blog.html">Blog</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </nav>
+    <div class="container nav">
+      <div class="brand">
+        <div class="logo">SH</div>
+        <div>
+          <strong>Scribe Haus</strong>
+          <small>Founded by Akosua Addae Buapim</small>
+        </div>
+      </div>
+      <nav class="menu">
+        <a href="#books">Books</a>
+        <a href="#services">Services</a>
+        <a href="#inspiration">Inspiration</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
   </header>
 
-  <!-- Hero Section -->
+  <!-- Hero -->
   <section class="hero">
-    <div class="hero-content">
-      <h1>Welcome to <span>Scribe Haus</span></h1>
-      <p>Where words meet design — books, creativity, and professional services.</p>
-      <a href="services.html" class="btn">Explore Services</a>
-    </div>
-  </section>
-
-  <!-- Services Preview -->
-  <section class="services-preview">
-    <h2>What We Offer</h2>
-    <div class="service-cards">
-      <div class="card">
-        <h3>Writing & Editing</h3>
-        <p>From CVs to books, we polish your words and ideas.</p>
+    <div class="container">
+      <div>
+        <h1>Where Words & Design Meet</h1>
+        <p class="lead">Scribe Haus is a creative studio crafting children’s books, journals, and premium design—so your story looks as powerful as it feels.</p>
+        <div class="cta">
+          <a href="#books" class="btn primary">Explore Our Work</a>
+          <a href="#services" class="btn ghost">Hire Scribe Haus</a>
+        </div>
       </div>
-      <div class="card">
-        <h3>Graphic Design</h3>
-        <p>Book covers, flyers, social media — eye-catching designs.</p>
-      </div>
-      <div class="card">
-        <h3>Books & Publishing</h3>
-        <p>Discover our children’s affirmations and upcoming works.</p>
+      <div class="covers">
+        <div class="card" style="position:relative">
+          <span class="badge">Available</span>
+          <img src="images/wilde-companion-cover.png" alt="The Wilde Companion cover" />
+        </div>
+        <div class="card" style="position:relative">
+          <span class="badge">Coming Soon</span>
+          <img src="images/childrens-affirmations-cover.png" alt="Children’s Affirmations cover" />
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- Featured Book -->
-  <section class="featured-book">
-    <h2>Featured Book</h2>
-    <img src="images/the_wilde_companion.png" alt="The Wilde Companion Book Cover">
-    <p><em>The Wilde Companion</em> — Coming Soon!</p>
-    <a href="books.html" class="btn">See More</a>
-  </section>
-
-  <!-- Testimonials -->
-  <section class="testimonials">
-    <h2>What People Say</h2>
-    <div class="testimonial-cards">
-      <div class="t-card">
-        <p>"Scribe Haus transformed my CV — I landed interviews instantly!"</p>
-        <span>- Happy Client</span>
-      </div>
-      <div class="t-card">
-        <p>"Her book designs are stunning and professional!"</p>
-        <span>- Reader</span>
+  <!-- Books -->
+  <section id="books">
+    <div class="container">
+      <h2>Books & Journals</h2>
+      <div class="grid grid-2">
+        <div class="card book-card">
+          <img src="images/wilde-companion-cover.png" alt="The Wilde Companion cover">
+          <h3>The Wilde Companion</h3>
+          <p class="muted">A vintage-inspired journal of Oscar Wilde quotes, fun facts, and room for your reflections.</p>
+          <div style="margin-top:10px">
+            <a class="btn" href="#contact">Order / Enquire</a>
+          </div>
+        </div>
+        <div class="card book-card">
+          <img src="images/childrens-affirmations-cover.png" alt="Children’s Affirmations cover">
+          <h3>Children’s Affirmations</h3>
+          <span class="tag">Coming Soon</span>
+          <p class="muted">Daily words that grow confidence, kindness, and joy—illustrated and parent-friendly.</p>
+          <div style="margin-top:10px">
+            <a class="btn" href="#contact">Pre-Order Interest</a>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- Footer -->
+  <!-- Services -->
+  <section id="services">
+    <div class="container">
+      <h2>Studio Services</h2>
+      <div class="grid grid-3">
+        <div class="card service-card">
+          <div class="service-icon">✍🏾</div>
+          <h3>Writing & Editing</h3>
+          <p class="muted">Children’s content, journals, copyediting, and story polishing—clear, warm, and on-brand.</p>
+          <a class="btn" href="mailto:akosuaaddaebuapim@gmail.com">Book a Consult</a>
+        </div>
+        <div class="card service-card">
+          <div class="service-icon">🎨</div>
+          <h3>Graphic Design</h3>
+          <p class="muted">Covers, brand kits, social graphics, and print-ready layouts with a luxe touch.</p>
+          <a class="btn" href="https://wa.me/233547940650" target="_blank">Chat on WhatsApp</a>
+        </div>
+        <div class="card service-card">
+          <div class="service-icon">📄</div>
+          <h3>CVs & Cover Letters</h3>
+          <p class="muted">Professional résumés and tailored letters that highlight your value—clean and compelling.</p>
+          <a class="btn" href="https://www.instagram.com/a.buapim" target="_blank">DM on Instagram</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Inspiration -->
+  <section id="inspiration" class="inspo">
+    <div class="container">
+      <h2>Scribe Haus Inspirations</h2>
+      <div class="card">
+        <div id="inspo-text" class="quote">“My words have power.”</div>
+        <div id="inspo-meta" class="muted" style="margin-top:8px">— Creative affirmation</div>
+        <div class="shuffle">
+          <a class="btn ghost" href="#" id="shuffle-btn">Shuffle Inspiration</a>
+        </div>
+      </div>
+      <p class="muted" style="margin-top:12px">New tips & quotes rotate automatically.</p>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about">
+    <div class="container">
+      <h2>About Scribe Haus</h2>
+      <div class="card">
+        <p class="lead" style="margin:0">
+          Scribe Haus is a boutique creative studio crafting books, journals, and brand visuals with soul.
+          Founded by <strong>Akosua Addae Buapim</strong>, we blend storytelling and design to help ideas shine—on the shelf and on the screen.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="contact">
+    <div class="container">
+      <h2>Work with Scribe Haus</h2>
+      <div class="grid grid-2">
+        <div class="card">
+          <h3>Say Hello</h3>
+          <p class="muted">Email: <a class="link" href="mailto:akosuaaddaebuapim@gmail.com">akosuaaddaebuapim@gmail.com</a></p>
+          <p class="muted">WhatsApp: <a class="link" href="https://wa.me/233547940650" target="_blank">+233 54 794 0650</a></p>
+          <p class="muted">Instagram: <a class="link" href="https://www.instagram.com/a.buapim" target="_blank">@a.buapim</a></p>
+        </div>
+        <div class="card">
+          <h3>Quick Links</h3>
+          <div class="socials">
+            <a href="mailto:akosuaaddaebuapim@gmail.com">📧 Email</a>
+            <a href="https://wa.me/233547940650" target="_blank">💬 WhatsApp</a>
+            <a href="https://www.instagram.com/a.buapim" target="_blank">📸 Instagram</a>
+          </div>
+          <div style="margin-top:14px">
+            <a class="btn primary" href="#services">Request a Project</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <footer>
-    <p>© 2025 Scribe Haus | Founded by Akosua Addae Buapim</p>
-    <div class="socials">
-      <a href="mailto:akosuaaddaebuapim@gmail.com">Email</a> |
-      <a href="https://www.instagram.com/a.buapim">Instagram</a> |
-      <a href="https://wa.me/233547940650">WhatsApp</a>
+    <div class="container">
+      <div>© <span id="year"></span> Scribe Haus · All Rights Reserved</div>
+      <div style="margin-top:6px;color:#7c7c7c">A creative studio founded by Akosua Addae Buapim</div>
     </div>
   </footer>
+
+  <!-- Inspiration Data + Small JS -->
+  <script>
+    const inspirations = [
+      { text: "My words have power.", meta: "— Creative affirmation" },
+      { text: "Design is thinking made visual.", meta: "— Saul Bass" },
+      { text: "Write first. Edit later.", meta: "— Writing tip" },
+      { text: "Courage is grace under pressure.", meta: "— Ernest Hemingway" },
+      { text: "I create without fear. I refine with care.", meta: "— Studio mantra" },
+      { text: "The only way to do great work is to love what you do.", meta: "— Steve Jobs" },
+      { text: "Small daily steps finish big books.", meta: "— Writing tip" },
+      { text: "Be the kind voice you needed as a child.", meta: "— Children’s craft" },
+      { text: "Simplicity is the ultimate sophistication.", meta: "— Leonardo da Vinci" }
+    ];
+
+    const textEl = document.getElementById('inspo-text');
+    const metaEl = document.getElementById('inspo-meta');
+    const shuffle = () => {
+      const pick = inspirations[Math.floor(Math.random() * inspirations.length)];
+      textEl.textContent = "“" + pick.text.replace(/^“|”$/g, '') + "”";
+      metaEl.textContent = pick.meta;
+    };
+    document.getElementById('shuffle-btn').addEventListener('click', (e)=>{e.preventDefault(); shuffle();});
+    setInterval(shuffle, 10000);
+    shuffle();
+
+    // Year
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+
+  <!-- Schema.org (helps SEO) -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Organization",
+    "name":"Scribe Haus",
+    "url":"https://akosuaaddaebuapim-hash.github.io/Scribe-Haus/",
+    "logo":"https://akosuaaddaebuapim-hash.github.io/Scribe-Haus/images/logo.png",
+    "founder":"Akosua Addae Buapim",
+    "sameAs":[
+      "mailto:akosuaaddaebuapim@gmail.com",
+      "https://www.instagram.com/a.buapim",
+      "https://wa.me/233547940650"
+    ]
+  }
+  </script>
 </body>
-    </html>
+</html>
