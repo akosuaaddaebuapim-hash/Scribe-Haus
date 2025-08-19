@@ -1,303 +1,166 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Scribe Haus — by Akosua Addae Buapim</title>
-  <meta name="description" content="Scribe Haus blends children’s books, graphic design, and joyful creativity. Founded by Akosua Addae Buapim. Custom books, design, editing, CVs, and websites." />
-  <meta name="theme-color" content="#0b0b0f"/>
-
-  <!-- OpenGraph -->
-  <meta property="og:title" content="Scribe Haus — by Akosua Addae Buapim">
-  <meta property="og:description" content="Children’s books • Graphic design • Editing • CVs • Websites">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://akosuaaddaebuapim-hash.github.io/Scribe-Haus/">
-
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scribe Haus — Books, Design & Creative Studio</title>
   <style>
-    :root{
-      --bg:#0b0b0f;           /* deep charcoal */
-      --panel:#121218;        /* slightly lighter panel */
-      --ink:#f6f3ea;          /* warm ivory text */
-      --muted:#b9b2a3;
-      --bronze:#c08b3c;       /* bronze-gold */
-      --bronze-deep:#8c6127;
-      --line:#22222d;
-      --accent:#ffd39a;
+    /* Reset & Base */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
-    *{box-sizing:border-box}
-    html,body{margin:0}
-    body{
-      background:
-        radial-gradient(1200px 600px at 20% -10%, rgba(192,139,60,.15), transparent 60%),
-        radial-gradient(900px 500px at 110% 20%, rgba(192,139,60,.10), transparent 60%),
-        var(--bg);
-      color:var(--ink);
-      font-family:Inter,system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
-      line-height:1.65;
+    body {
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      color: #222;
+      background: #fdfdfd;
     }
-    a{color:var(--ink);text-decoration:none}
-    img{max-width:100%;display:block}
-    .container{max-width:1180px;margin:0 auto;padding:0 18px}
-    .nav{display:flex;justify-content:space-between;align-items:center;padding:14px 0;border-bottom:1px solid var(--line);position:sticky;top:0;background:rgba(11,11,15,.7);backdrop-filter:saturate(160%) blur(8px);z-index:30}
-    .brand{display:flex;align-items:center;gap:14px}
-    .logo{height:44px;width:44px;border-radius:12px;background:
-      linear-gradient(145deg, #d7a055, #7a5321);
-      display:grid;place-items:center;color:#111;font-weight:900}
-    .logo span{background:linear-gradient(180deg,#2a1a08,#000);-webkit-background-clip:text;background-clip:text;color:transparent}
-    .brand .name{font-family:"Playfair Display",serif;font-weight:900;letter-spacing:.5px}
-    .nav a{margin-left:18px;font-weight:700}
-    .btn{
-      display:inline-block;padding:12px 18px;border:1px solid var(--bronze-deep);
-      background:linear-gradient(180deg,#d3a35b,#8f6229);color:#130d06;border-radius:14px;
-      font-weight:900;letter-spacing:.3px;box-shadow:0 8px 20px rgba(192,139,60,.22)
+    h1, h2 {
+      margin-bottom: 15px;
+      font-weight: 700;
     }
-    .btn.ghost{background:transparent;color:var(--ink);border-color:var(--bronze);box-shadow:none}
-    .section{padding:70px 0}
-    h1{font-family:"Playfair Display",serif;font-size:52px;line-height:1.1;margin:0 0 12px}
-    h2{font-family:"Playfair Display",serif;font-size:36px;line-height:1.2;margin:0 0 8px}
-    h3{font-size:20px;margin:0 0 6px}
-    p.lead{font-size:18px;color:var(--muted);margin:0}
-    .grid{display:grid;gap:24px}
-    @media(min-width:980px){.grid-2{grid-template-columns:1.1fr .9fr}}
-    .card{background:linear-gradient(180deg,#14141b,#0d0d12);border:1px solid var(--line);border-radius:18px;padding:18px}
-    .pill{display:inline-block;border:1px solid var(--bronze);color:var(--accent);border-radius:999px;padding:6px 10px;font-size:12px}
-    .books{display:grid;gap:22px}
-    @media(min-width:760px){.books{grid-template-columns:repeat(3,1fr)}}
-    .book{border:1px solid var(--line);border-radius:18px;overflow:hidden;background:#0f0f14}
-    .book .meta{padding:14px}
-    .book .title{font-weight:800}
-    .services{display:grid;gap:22px}
-    @media(min-width:900px){.services{grid-template-columns:repeat(5,1fr)}}
-    .service{border:1px solid var(--line);border-radius:16px;padding:16px;background:linear-gradient(180deg,#15151c,#0c0c12)}
-    .service b{color:var(--accent)}
-    footer{border-top:1px solid var(--line);padding:28px 0;color:var(--muted)}
-    /* quiz */
-    .quiz{border:1px dashed var(--bronze);border-radius:16px;padding:16px;background:#0e0e14}
-    .quiz button{margin-top:8px}
-    /* gallery marquee */
-    .marquee{overflow:hidden;white-space:nowrap;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:14px 0;margin-top:24px}
-    .marquee span{display:inline-block;margin-right:28px;color:var(--muted)}
-    /* contact */
-    form input,form textarea{width:100%;padding:12px 14px;border-radius:12px;border:1px solid var(--line);background:#0c0c12;color:var(--ink)}
-    form textarea{min-height:120px}
-    .split{display:grid;gap:24px}
-    @media(min-width:980px){.split{grid-template-columns:1fr 1fr}}
-    .tiny{font-size:12px;color:var(--muted)}
-    .badge{font-weight:800;color:var(--bg);background:linear-gradient(180deg,#d3a35b,#8f6229);padding:4px 10px;border-radius:999px;margin-left:8px}
-  </style>
+    p {
+      margin-bottom: 15px;
+    }
+    section {
+      padding: 60px 20px;
+    }
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+    }
 
-  <!-- Schema -->
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"Organization",
-    "name":"Scribe Haus",
-    "url":"https://akosuaaddaebuapim-hash.github.io/Scribe-Haus/",
-    "logo":"file_scribe_haus_logo.png",
-    "founder":"Akosua Addae Buapim",
-    "sameAs":["https://www.instagram.com/a.buapim"],
-    "description":"Children’s books, graphic design, editing, CVs and websites."
-  }
-  </script>
+    /* Hero Section */
+    .hero {
+      background: linear-gradient(135deg, #dbeafe, #fef9c3);
+      text-align: center;
+      padding: 100px 20px;
+    }
+    .hero h1 {
+      font-size: 2.5rem;
+      color: #111;
+    }
+    .hero p {
+      font-size: 1.1rem;
+      max-width: 700px;
+      margin: 15px auto;
+    }
+    .hero-buttons {
+      margin: 25px 0;
+    }
+    .btn {
+      display: inline-block;
+      margin: 8px;
+      padding: 12px 22px;
+      font-size: 1rem;
+      text-decoration: none;
+      color: #fff;
+      background: #2563eb;
+      border-radius: 8px;
+      transition: background 0.3s ease;
+    }
+    .btn:hover {
+      background: #1e40af;
+    }
+    .cta {
+      margin-top: 20px;
+      font-size: 1rem;
+      font-weight: 500;
+    }
+
+    /* About Section */
+    .about {
+      background: #ffffff;
+      text-align: center;
+    }
+    .about h2 {
+      font-size: 2rem;
+      color: #111;
+    }
+
+    /* Books Section */
+    .books {
+      background: #f9fafb;
+      text-align: center;
+    }
+    .books h2 {
+      font-size: 2rem;
+      color: #111;
+    }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      .hero h1 {
+        font-size: 2rem;
+      }
+      .btn {
+        display: block;
+        width: 80%;
+        margin: 10px auto;
+      }
+    }
+  </style>
 </head>
 <body>
 
-  <!-- NAV -->
-  <div class="container nav">
-    <div class="brand">
-      <div class="logo"><span>SH</span></div>
-      <div>
-        <div class="name" style="font-size:22px;line-height:1">Scribe Haus</div>
-        <div style="font-size:12px;color:var(--muted);margin-top:-2px">Stories • Design • Joy</div>
-      </div>
-    </div>
-    <nav>
-      <a href="#books">Books</a>
-      <a href="#services">Services</a>
-      <a href="#play">Play</a>
-      <a href="#about">About</a>
-      <a href="#contact" class="btn">Contact</a>
-    </nav>
-  </div>
-
-  <!-- HERO -->
-  <section class="section">
-    <div class="container grid grid-2">
-      <div>
-        <div class="pill">Founded by Akosua Addae Buapim</div>
-        <h1>Bronze-glow stories & beautiful design — crafted with heart.</h1>
-        <p class="lead">At <b>Scribe Haus</b>, I create confidence-building children’s books, elegant brand visuals, persuasive CVs, and polished words that shine.</p>
-        <div style="margin-top:18px;display:flex;gap:12px;flex-wrap:wrap">
-          <a href="#books" class="btn">Explore Books</a>
-          <a href="#services" class="btn ghost">Hire Me</a>
-        </div>
-        <div class="marquee" aria-hidden="true">
-          <span>Children’s Books</span><span>Graphic Design</span><span>CVs & Cover Letters</span><span>Editing & Proofreading</span><span>Custom Journals</span><span>Websites</span>
-        </div>
-      </div>
-      <div class="card">
-        <img src="file_tiny_thoughts_big_power.png" alt="Tiny Thoughts, Big Power cover">
-      </div>
-    </div>
-  </section>
-
-  <!-- BOOKS -->
-  <section id="books" class="section" style="padding-top:30px">
+  <!-- Hero Section -->
+  <section id="hero" class="hero">
     <div class="container">
-      <h2>Books & Companions</h2>
-      <p class="lead">Uplifting reads for kids and keepsake companions for grownups.</p>
-      <div class="books" style="margin-top:18px">
-        <article class="book">
-          <img src="file_tiny_thoughts_big_power.png" alt="Tiny Thoughts, Big Power">
-          <div class="meta">
-            <div class="title">Tiny Thoughts, Big Power</div>
-            <div class="tiny">Kids’ affirmations • 32 pages</div>
-            <div style="margin-top:10px;display:flex;gap:10px;flex-wrap:wrap">
-              <a class="btn" href="#contact">Pre-Order</a>
-              <a class="btn ghost" href="#sample">See Inside</a>
-            </div>
-          </div>
-        </article>
-        <article class="book">
-          <img src="file_the_wilde_companion.png" alt="The Wilde Companion">
-          <div class="meta">
-            <div class="title">The Wilde Companion</div>
-            <div class="tiny">Quote journal • Oscar Wilde</div>
-            <div style="margin-top:10px;display:flex;gap:10px;flex-wrap:wrap">
-              <a class="btn" href="#contact">Order Custom</a>
-              <a class="btn ghost" href="#sample">Preview</a>
-            </div>
-          </div>
-        </article>
-        <article class="book">
-          <div style="aspect-ratio:3/4;background:linear-gradient(180deg,#1b1b23,#111116);display:grid;place-items:center;border-bottom:1px solid var(--line)">
-            <div>
-              <div style="text-align:center;font-weight:900;font-size:22px">More Titles</div>
-              <div class="tiny" style="text-align:center">“Coming Soon”</div>
-            </div>
-          </div>
-          <div class="meta">
-            <div class="title">Custom Children’s Book</div>
-            <div class="tiny">Your child as the hero • Made to order</div>
-            <div style="margin-top:10px"><a class="btn" href="#contact">Start a Project</a></div>
-          </div>
-        </article>
+      <h1>Scribe Haus — Books, Design & Creative Studio</h1>
+      <p>
+        We create stories, designs, and ideas that inspire. From books and journals 
+        to branding, editing, and digital projects, Scribe Haus blends words and 
+        visuals into powerful, polished creations.
+      </p>
+      <div class="hero-buttons">
+        <a href="#books" class="btn">See Books</a>
+        <a href="#pricing" class="btn">Pricing</a>
+        <a href="#services" class="btn">Services</a>
+        <a href="#contact" class="btn">Contact</a>
       </div>
+      <p class="cta">
+        Need a custom book, editing, or design project? <strong>Message me today ❤️</strong>
+      </p>
     </div>
   </section>
 
-  <!-- SERVICES -->
-  <section id="services" class="section" style="padding-top:30px">
+  <!-- About Section -->
+  <section id="about" class="about">
     <div class="container">
-      <h2>Services</h2>
-      <p class="lead">Everything words and visuals — done with care.</p>
-      <div class="services" style="margin-top:14px">
-        <div class="service"><h3>Graphic Design</h3><p>Logos, social posts, flyers, brochures, book covers, brand kits.</p><b>From $49</b></div>
-        <div class="service"><h3>Content Writing</h3><p>Web copy, blog posts, marketing copy, product pages, bios.</p><b>From $39</b></div>
-        <div class="service"><h3>Editing</h3><p>Proofreading and copy editing for clarity, tone, and polish.</p><b>From $25</b></div>
-        <div class="service"><h3>CVs & Cover Letters</h3><p>Tailored, ATS-friendly CVs and compelling letters that win interviews.</p><b>From $35</b></div>
-        <div class="service"><h3>Websites</h3><p>Clean, responsive one-pagers or multi-page sites for small brands.</p><b>From $99</b></div>
-      </div>
-      <div style="margin-top:16px">
-        <a class="btn" href="#contact">Book a Free Chat</a>
-      </div>
+      <h2>About Scribe Haus</h2>
+      <p>
+        Hi, I’m <strong>Akosua</strong>. Scribe Haus is a creative studio for books, writing, editing, 
+        design, branding, and digital projects. I work with individuals, businesses, 
+        and creators across all genres and industries.
+      </p>
+      <p>
+        From memoirs to fiction, poetry, educational resources, websites, and brand 
+        identity, every project is crafted with care and attention to detail.
+      </p>
     </div>
   </section>
 
-  <!-- PLAY ZONE -->
-  <section id="play" class="section">
-    <div class="container split">
-      <div class="card">
-        <h3>Mini Affirmation Quiz <span class="badge">New</span></h3>
-        <p class="tiny">Pick how you’d like to feel today — get a gentle affirmation.</p>
-        <div class="quiz">
-          <label><input type="radio" name="mood" value="brave"> Brave</label><br>
-          <label><input type="radio" name="mood" value="calm"> Calm</label><br>
-          <label><input type="radio" name="mood" value="curious"> Curious</label><br>
-          <button class="btn" id="affirmBtn" type="button">Get Affirmation</button>
-          <p id="affirmOut" style="margin:10px 0 0;color:var(--accent)"></p>
-        </div>
-      </div>
-      <div class="card">
-        <h3>Printable Fun</h3>
-        <p class="tiny">Free downloads you can print at home.</p>
-        <ul>
-          <li><a href="#" onclick="alert('Add your PDF later in the repo and link it here.');return false;">Color-in Bookmarks (PDF)</a></li>
-          <li><a href="#" onclick="alert('Add your PDF later in the repo and link it here.');return false;">Morning Affirmations Chart (PDF)</a></li>
-          <li><a href="#" onclick="alert('Add your PDF later in the repo and link it here.');return false;">Goal Stars Sheet (PDF)</a></li>
-        </ul>
-      </div>
+  <!-- Books & Journals Section -->
+  <section id="books" class="books">
+    <div class="container">
+      <h2>Books & Journals</h2>
+      <p>
+        At <strong>Scribe Haus</strong>, books are at the heart of what we do. From uplifting 
+        children’s affirmations to personal journals, poetry, memoirs, and fiction, 
+        every book is created with the goal of inspiring, guiding, or simply entertaining.
+      </p>
+      <p>
+        We believe stories and words have the power to shape lives — whether it’s a daily 
+        journal for self-reflection, a children’s book filled with positivity, or a full-length novel. 
+        Our collection continues to grow, blending creativity with purpose.
+      </p>
+      <p>
+        Explore our range of published and upcoming titles, and find the one that speaks to you.
+      </p>
     </div>
   </section>
 
-  <!-- ABOUT -->
-  <section id="about" class="section">
-    <div class="container grid grid-2">
-      <div>
-        <h2>About Scribe Haus</h2>
-        <p class="lead">Scribe Haus is a small creative studio founded by <b>Akosua Addae Buapim</b>. I make joyful children’s books and elegant design for people and brands who care about warmth, clarity, and heart.</p>
-        <p>From the first sketch to the final polish, I love transforming ideas into something you can hold, read, and be proud of.</p>
-        <div style="margin-top:10px;display:flex;gap:12px;flex-wrap:wrap">
-          <a class="btn" href="https://www.instagram.com/a.buapim" target="_blank" rel="noopener">Instagram @a.buapim</a>
-          <a class="btn ghost" href="#contact">Work with Me</a>
-        </div>
-      </div>
-      <div class="card">
-        <img src="file_tiny_thoughts_big_power.png" alt="Book preview">
-      </div>
-    </div>
-  </section>
-
-  <!-- CONTACT -->
-  <section id="contact" class="section">
-    <div class="container grid grid-2">
-      <div>
-        <h2>Say Hello</h2>
-        <p class="lead">Email: <a href="mailto:akosuaaddaebuapim@gmail.com">akosuaaddaebuapim@gmail.com</a><br>
-        WhatsApp: <a href="https://wa.me/233547940650" target="_blank" rel="noopener">+233 547 940 650</a></p>
-        <p class="tiny">Tell me about your project, timeline, and any references you love.</p>
-      </div>
-      <div class="card">
-        <form action="https://formspree.io/f/mayvpqgd" method="POST">
-          <input name="name" placeholder="Your name" required style="margin-bottom:10px">
-          <input name="email" type="email" placeholder="Your email" required style="margin-bottom:10px">
-          <textarea name="message" placeholder="Tell me about your book/design/CV/website idea…" required></textarea>
-          <div style="margin-top:10px;display:flex;gap:10px;flex-wrap:wrap">
-            <button class="btn" type="submit">Send</button>
-            <a class="btn ghost" href="https://wa.me/233547940650" target="_blank" rel="noopener">WhatsApp Me</a>
-          </div>
-          <p class="tiny" style="margin-top:8px">By sending, you agree to be contacted by Akosua Addae Buapim.</p>
-        </form>
-      </div>
-    </div>
-  </section>
-
-  <footer>
-    <div class="container" style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap">
-      <div>© <span id="yr"></span> Scribe Haus — Akosua Addae Buapim</div>
-      <div class="tiny">Built with love, bronze, and good coffee.</div>
-    </div>
-  </footer>
-
-  <script>
-    // year
-    document.getElementById('yr').textContent = new Date().getFullYear();
-
-    // mini quiz
-    const lines = {
-      brave: "Today I try new things. I am safe, strong, and ready.",
-      calm: "I breathe in peace and breathe out worries. My heart is steady.",
-      curious: "Questions are my superpower. I explore and learn with joy."
-    };
-    document.getElementById('affirmBtn').addEventListener('click',()=>{
-      const mood = document.querySelector('input[name="mood"]:checked');
-      document.getElementById('affirmOut').textContent = mood ? lines[mood.value] : "Pick a mood first ☺";
-    });
-  </script>
 </body>
 </html>
