@@ -1,88 +1,671 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Scribe Haus</title>
-  <link rel="stylesheet" href="styles.css" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Scribe Haus Writing, Books & Creative Studio</title>
+  <meta name="description" content="Scribe Haus creative studio by Akosua Addae Buapim. Books, design, writing, editing, branding, websites, and more for all ages." />
+  <meta name="author" content="Akosua Addae Buapim / Scribe Haus" />
+  <meta property="og:title" content="Scribe Haus Writing, Books & Creative Studio" />
+  <meta property="og:description" content="Books, custom projects, graphic design, writing, editing, branding, CV services, and playful interactive zone." />
+  <meta property="og:image" content="images/og-cover.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <style>
+    :root{
+      --bg:#080707;
+      --panel:#0f0f10;
+      --muted:#bfb4a3;
+      --bronze:#b07a2f;
+      --bronze-2:#c29748;
+      --accent:#91c2ff;
+      --glass: rgba(255,255,255,0.02);
+      --line: rgba(255,255,255,0.03);
+      --radius:12px;
+      --pad:18px;
+    }
+    *{box-sizing:border-box;}
+    html,body{height:100%;}
+    body{
+      margin:0;
+      font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;
+      background: radial-gradient(800px 400px at 10% 10%, #0b0b0b 0%, #070707 45%, #050505 100%);
+      color:#f3efe8;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.6;
+      scroll-behavior:smooth;
+    }
+    a{color:var(--bronze-2);}
+    img{max-width:100%;display:block;}
+
+    header{position:sticky;top:0;z-index:1200;background:linear-gradient(180deg, rgba(0,0,0,0.65), rgba(0,0,0,0.45));border-bottom:1px solid var(--line);}
+    .nav{max-width:1120px;margin:0 auto;padding:12px 18px;display:flex;align-items:center;justify-content:space-between;gap:12px;}
+    .brand{display:flex;align-items:center;gap:12px;}
+    .mark{width:48px;height:48px;border-radius:10px;background:linear-gradient(135deg,var(--bronze),var(--bronze-2));display:grid;place-items:center;font-weight:900;color:#0b0b0b;font-family:Georgia,serif;}
+    .brand .title{font-weight:800;}
+    .brand .sub{font-size:12px;color:var(--muted);margin-top:3px;}
+    nav.menu{display:flex;gap:12px;align-items:center;}
+    nav.menu a{padding:8px 10px;border-radius:10px;font-weight:600;text-decoration:none;color:inherit;}
+    nav.menu a:hover{background:var(--glass);color:var(--bronze-2);}
+    .cta{background:linear-gradient(90deg,var(--bronze),var(--bronze-2));padding:8px 12px;border-radius:10px;color:#111;font-weight:800;}
+
+    /* Deep dark, glossy hero */
+    .animated-hero.deep-dark-hero {
+      background: linear-gradient(135deg, #120c07 0%, #231a10 40%, #23284d 100%);
+      box-shadow: 0 8px 32px rgba(32,24,11,0.7);
+      border: 1px solid #2c2113;
+      color: #e7decf;
+      max-width:1200px;
+      margin:26px auto;
+      padding:36px 26px 32px 26px;
+      border-radius:24px;
+      display:block;
+      opacity: 0;
+      position: relative;
+      animation: fadeInHero 1.5s ease-in forwards;
+    }
+    .deep-dark-hero:before {
+      content: '';
+      display: block;
+      position: absolute;
+      inset: 0;
+      border-radius: 24px;
+      background: linear-gradient(90deg, rgba(192,151,72,0.18) 0%, rgba(255,255,255,0.09) 80%);
+      pointer-events: none;
+      z-index: 0;
+    }
+    .deep-dark-hero .hero-title,
+    .deep-dark-hero .hero-desc,
+    .deep-dark-hero .lead {
+      position: relative;
+      z-index: 1;
+      color: #e7decf;
+      text-shadow: 0 2px 14px #100a05;
+    }
+    @keyframes fadeInHero {
+      to {opacity: 1;}
+    }
+    .hero-title {
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: 48px;
+      color: #ffd700;
+      text-shadow: 2px 2px 8px rgba(144,194,255,0.25);
+      letter-spacing: 1px;
+      margin: 0 0 10px 0;
+    }
+    .hero-desc {
+      font-size: 1.25em;
+      color: #e7decf;
+      margin-top: 16px;
+      margin-bottom: 22px;
+      text-shadow: 0 1px 8px #18120d;
+      font-family: "Inter", system-ui, sans-serif;
+    }
+    .rainbow-text {
+      background: linear-gradient(90deg, #ffd700, #91c2ff, #ff8c00, #ff69b4, #b07a2f);
+      background-size: 200% auto;
+      color: #fff;
+      font-weight: bold;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: rainbowMove 3s linear infinite;
+    }
+    @keyframes rainbowMove {
+      to {background-position:200% center;}
+    }
+    .hero.actions {
+      margin-top: 22px;
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .glossy-btn {
+      background: linear-gradient(90deg, #ffd700 0%, #91c2ff 100%);
+      color: #080707;
+      border: none;
+      box-shadow: 0 2px 12px rgba(144,194,255,0.15), 0 1px 0 #fff inset;
+      position: relative;
+      transition: transform 0.2s, box-shadow 0.2s;
+      font-weight: 800;
+      overflow: hidden;
+      border-radius: 14px;
+      padding: 12px 22px;
+      font-size: 18px;
+    }
+    .glossy-btn:after {
+      content: "";
+      position: absolute;
+      left: 0; top: 0;
+      width: 100%; height: 100%;
+      background: linear-gradient(120deg, rgba(255,255,255,0.40) 0%, rgba(255,255,255,0.15) 60%);
+      opacity: 0.6;
+      pointer-events: none;
+      border-radius: inherit;
+      transition: opacity 0.2s;
+    }
+    .glossy-btn:hover, .glossy-btn:focus {
+      transform: scale(1.06);
+      box-shadow: 0 6px 24px rgba(144,194,255,0.25);
+      outline: none;
+    }
+    .glossy-btn:active:after {
+      opacity: 0.9;
+    }
+    .small{font-size:13px;color:var(--muted);}
+    @media(max-width:980px){.animated-hero{padding:18px;}}
+
+    main{max-width:1120px;margin:28px auto;padding:0 18px;}
+    section.block{padding:28px 0;border-top:1px solid rgba(255,255,255,0.02);}
+    section.block h2{font-family:"Playfair Display",serif;color:var(--bronze-2);margin-bottom:10px;}
+    .card{background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.005));padding:16px;border-radius:12px;border:1px solid rgba(255,255,255,0.02);}
+    .muted{color:var(--muted);}
+    .cols{display:grid;gap:16px;}
+    .cols.cols-2{grid-template-columns:1fr 1fr;}
+    .cols.cols-3{grid-template-columns:repeat(3,1fr);}
+    @media(max-width:980px){.cols.cols-2,.cols.cols-3{grid-template-columns:1fr;}}
+
+    /* Play zone cards with images and animation */
+    .animated-card {
+      animation: cardFadeIn 1.2s cubic-bezier(.5,1.6,.5,1) both;
+      background: linear-gradient(120deg, #18120d 80%, #23284d 100%);
+      border: 1px solid #23284d;
+      box-shadow: 0 2px 18px #14141466;
+      transition: transform 0.18s, box-shadow 0.18s;
+      position:relative;
+    }
+    @keyframes cardFadeIn {
+      from {opacity:0;transform:translateY(18px) scale(0.98);}
+      to {opacity:1;transform:translateY(0) scale(1);}
+    }
+    .animated-card:hover, .animated-card:focus-within {
+      transform: scale(1.05) translateY(-3px);
+      box-shadow: 0 8px 32px #222015cc;
+      z-index:2;
+    }
+    .game-illustration {
+      width: 100%;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      margin-bottom: 8px;
+      margin-top: 2px;
+      min-height:54px;
+      animation: bounceIn 1.4s cubic-bezier(.5,1.6,.5,1) both;
+    }
+    .game-illustration img {
+      max-width: 54px;
+      max-height:54px;
+      border-radius: 8px;
+      box-shadow: 0 2px 14px #23284d66;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .animated-card:hover .game-illustration img,
+    .animated-card:focus-within .game-illustration img {
+      transform: scale(1.15) rotate(-8deg);
+      box-shadow: 0 6px 22px #ffd70066;
+    }
+    @keyframes bounceIn {
+      0% {transform:translateY(-40px) scale(0.7);opacity:0;}
+      70% {transform:translateY(6px) scale(1.12);opacity:0.9;}
+      100% {transform:translateY(0) scale(1);opacity:1;}
+    }
+
+    .play-grid{display:grid;gap:16px;}
+    @media(min-width:920px){.play-grid{grid-template-columns:1fr 1fr;}}
+    .play-card{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;min-height:150px;}
+    .spin-output{font-size:20px;font-weight:800;color:var(--bronze-2);}
+    .prompt{font-weight:700;color:var(--accent);}
+    .memory-board{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;}
+    .memo-btn{min-width:56px;min-height:56px;border-radius:8px;border:1px solid rgba(255,255,255,0.03);background:rgba(255,255,255,0.02);font-size:20px;}
+    .contact-grid{display:grid;gap:14px;}
+    @media(min-width:920px){.contact-grid{grid-template-columns:1fr 420px;}}
+    footer.site-footer{margin-top:30px;padding:20px;border-top:1px solid rgba(255,255,255,0.02);text-align:center;color:var(--muted);}
+    input[type="text"], input[type="email"], textarea{width:100%;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.03);background:rgba(255,255,255,0.01);color:inherit;}
+    @media(max-width:560px){
+      .nav{padding:10px;}
+      .brand .title{font-size:16px;}
+      .animated-hero{padding:12px;}
+    }
+
+    /* Pricing card & table styles */
+    .pricing-card {
+      background: linear-gradient(135deg, #19120c 70%, #23284d 100%);
+      border: 1px solid #2c2113;
+      box-shadow: 0 2px 18px #14141466;
+      margin-bottom: 24px;
+    }
+    .pricing-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 1.08em;
+      background: transparent;
+    }
+    .pricing-table th, .pricing-table td {
+      border-bottom: 1px solid #2c2113;
+      padding: 12px 10px;
+      text-align: left;
+      color: #e7decf;
+      vertical-align: top;
+    }
+    .pricing-table th {
+      background: #231a10;
+      color: #ffd700;
+      font-weight: 700;
+      font-size: 1.12em;
+      letter-spacing: 0.5px;
+    }
+    .pricing-table tr:last-child td { border-bottom: none; }
+    .pricing-table td strong { color: #ffd700; }
+  </style>
 </head>
 <body>
-  <!-- Hero Section -->
-  <section id="hero">
-    <h1>Scribe Haus — Books, Design & Creative Studio</h1>
-    <p>
-      We create stories, designs, and ideas that inspire. From books and journals to branding, editing, and digital projects, Scribe Haus blends words and visuals into powerful, polished creations.
-    </p>
-    <nav>
-      <a href="#books">See Books</a>
-      <a href="#pricing">Pricing</a>
-      <a href="#services">Services</a>
-      <a href="#contact">Contact</a>
-    </nav>
-    <p class="cta">Need a custom book, editing, or design project? Message me today ❤️</p>
-  </section>
-
-  <!-- About Section -->
-  <section id="about">
-    <h2>About Scribe Haus</h2>
-    <p>
-      Hi, I’m Akosua. Scribe Haus is a creative studio for books, writing, editing, design, branding, and digital projects. I work with individuals, businesses, and creators across all genres and industries. From memoirs to fiction, poetry, educational resources, websites, and brand identity, every project is crafted with care and attention to detail.
-    </p>
-  </section>
-
-  <!-- Books & Journals Section -->
-  <section id="books">
-    <h2>Books & Journals</h2>
-    <p>
-      At <strong>Scribe Haus</strong>, books are at the heart of what we do. From uplifting children’s affirmations to personal journals, poetry, memoirs, and fiction, every book is created with the goal of inspiring, guiding, or simply entertaining.
-    </p>
-    <p>
-      We believe stories and words have the power to shape lives — whether it’s a daily journal for self-reflection, a children’s book filled with positivity, or a full-length novel. Our collection continues to grow, blending creativity with purpose.
-    </p>
-    <p>
-      Explore our range of published and upcoming titles, and find the one that speaks to you.
-    </p>
-  </section>
-
-  <!-- Pricing Section -->
-  <section id="pricing">
-    <h2>Pricing</h2>
-    <div class="pricing-plans">
-      <div class="plan">
-        <h3>Magic Package</h3>
-        <p>Perfect for thoughtful gifts, journals, and affirmations.</p>
+  <!-- Header -->
+  <header class="site-header" role="banner">
+    <div class="nav">
+      <div class="brand">
+        <img src="images/logo.svg" alt="Scribe Haus logo" style="width:48px;height:48px;border-radius:10px;display:block" onerror="this.style.display='none';document.querySelector('.mark').style.display='grid'">
+        <div class="mark" style="display:none">SH</div>
+        <div>
+          <div class="title">Scribe Haus</div>
+          <div class="sub">Founded by Akosua Addae Buapim</div>
+        </div>
       </div>
-      <div class="plan">
-        <h3>Silver Package</h3>
-        <p>Great for custom projects, editing, and creative writing.</p>
-      </div>
-      <div class="plan">
-        <h3>Gold Package</h3>
-        <p>Ideal for full book projects, branding, and premium design work.</p>
-      </div>
+      <nav class="menu" role="navigation" aria-label="Main">
+        <a href="#about">About</a>
+        <a href="#books">Books</a>
+        <a href="#services">Services</a>
+        <a href="#play">Play Zone</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#downloads">Downloads</a>
+        <a href="#inspo">Inspiration</a>
+        <a href="#contact" class="cta">Contact</a>
+      </nav>
     </div>
-  </section>
+  </header>
 
-  <!-- Services Section -->
-  <section id="services">
-    <h2>Services</h2>
-    <ul>
-      <li>Graphic Design</li>
-      <li>Writing & Editing</li>
-      <li>Website Building</li>
-      <li>CV & Cover Letter Writing</li>
-    </ul>
-  </section>
+  <!-- HERO SECTION -->
+  <div class="animated-hero deep-dark-hero" role="region" aria-label="Introduction">
+    <div>
+      <h1 class="hero-title">Scribe Haus — Writing, Books, & Creative Studio</h1>
+      <p class="lead muted hero-desc">
+        We create stories, designs, and ideas that inspire. From books and journals to branding, editing, and digital projects, Scribe Haus blends words and visuals into powerful, polished creations.<br>
+        <span class="rainbow-text">Bring your story to life!</span>
+      </p>
+      <div class="hero actions">
+        <button class="btn primary glossy-btn" onclick="document.getElementById('books').scrollIntoView({behavior:'smooth'})">See Books</button>
+        <button class="btn glossy-btn" onclick="document.getElementById('pricing').scrollIntoView({behavior:'smooth'})">Pricing</button>
+        <button class="btn glossy-btn" onclick="document.getElementById('services').scrollIntoView({behavior:'smooth'})">Services</button>
+        <button class="btn glossy-btn" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Contact</button>
+      </div>
+      <p class="small" style="margin-top:10px">
+        Want a custom book, editing, or design? Message me below ❤️
+      </p>
+    </div>
+  </div>
 
-  <!-- Contact Section -->
-  <section id="contact">
-    <h2>Contact</h2>
-    <p>Email: <a href="mailto:scribehaus@gmail.com">scribehaus@gmail.com</a></p>
-    <p>Instagram: <a href="https://instagram.com/a.buapim" target="_blank">@a.buapim</a></p>
-  </section>
+  <main>
+    <!-- About -->
+    <section id="about" class="block" aria-labelledby="about-title">
+      <h2 id="about-title">About Scribe Haus</h2>
+      <div class="card">
+        <p class="muted">Hi, I’m Akosua. Scribe Haus is a creative studio for books, writing, editing, design, branding, and digital projects. I work with individuals, businesses, and creators across all genres and industries. From memoirs to fiction, poetry, educational resources, websites, and brand identity, every project is crafted with care and attention to detail.
+          .</p>
+      </div>
+    </section>
 
-  <footer>
-    <p>&copy; 2025 Scribe Haus. All rights reserved.</p>
+    <!-- Books -->
+    <section id="books" class="block" aria-labelledby="books-title">
+      <h2 id="books-title">Books & Journals</h2>
+      <div class="cols cols-2">
+        <div class="card">
+          <h3>The Wilde Companion</h3>
+          <img src="images/file_the_wilde_companion.png" alt="The Wilde Companion" style="width:180px;margin:12px 0" onerror="this.style.display='none'">
+          <p class="muted">Vintage quotes + prompts to reflect on. A small companion for everyday observations and wonder.</p>
+          <div style="margin-top:10px"><button class="btn primary" onclick="alert('Preorder interest noted — thank you!')">Preorder Interest</button></div>
+        </div>
+        <div class="card">
+          <h3>Tiny Thoughts, Big Power</h3>
+          <img src="images/file_tiny_thoughts_big_power.png" alt="Tiny Thoughts, Big Power" style="width:180px;margin:12px 0" onerror="this.style.display='none'">
+          <p class="muted">Short affirmations and playful prompts to help build confidence, kindness, and curiosity in little ones.</p>
+          <div style="margin-top:10px"><button class="btn" onclick="alert('Thanks — you will be notified on launch!')">Subscribe for Launch</button></div>
+        </div>
+      </div>
+      <p class="small muted" style="margin-top:8px">More titles coming soon: memoirs, poetry, fiction, educational, and custom books for all ages!</p>
+    </section>
+
+    <!-- Services -->
+    <section id="services" class="block" aria-labelledby="services-title">
+      <h2 id="services-title">Studio Services</h2>
+      <div class="cols cols-3">
+        <div class="card">
+          <div class="service-ico">✍🏾</div>
+          <h4>Writing & Editing</h4>
+          <p class="muted">Books, articles, journals, business writing, and friendly editing for clarity and impact.</p>
+        </div>
+        <div class="card">
+          <div class="service-ico">🎨</div>
+          <h4>Graphic Design</h4>
+          <p class="muted">Covers, promo graphics, branding visuals—playful and polished.</p>
+        </div>
+        <div class="card">
+          <div class="service-ico">📚</div>
+          <h4>Custom Books</h4>
+          <p class="muted">Personalized books (names, photos, dedications)—thoughtful gifts and keepsakes.</p>
+        </div>
+
+        <div class="card">
+          <div class="service-ico">📄</div>
+          <h4>CV & Cover Letters</h4>
+          <p class="muted">Professional CVs and persuasive cover letters, tailored for your goals.</p>
+        </div>
+
+        <div class="card">
+          <div class="service-ico">✨</div>
+          <h4>Branding & Logo Design</h4>
+          <p class="muted">Unique logos, brand kits, social templates, and full business identity.</p>
+        </div>
+
+        <div class="card">
+          <div class="service-ico">🌐</div>
+          <h4>Websites & Digital</h4>
+          <p class="muted">Custom, responsive websites, eBooks, and digital assets for your brand.</p>
+        </div>
+      </div>
+      <div style="margin-top:12px"><button class="btn primary" onclick="document.getElementById('pricing').scrollIntoView({behavior:'smooth'})">View Pricing</button></div>
+    </section>
+
+    <!-- PLAY ZONE - With lively custom images and animation -->
+    <section id="play" class="block" aria-labelledby="play-title">
+      <h2 id="play-title">Play Zone — Short & Delightful</h2>
+      <p class="small muted">Mini-tools for 2–99 year olds: quick prompts, affirmations, memory games, scrambles, and a 5-minute creative sprint.</p>
+      <div class="play-grid" style="margin-top:14px">
+        <div class="card play-card animated-card">
+          <div class="game-illustration"><img src="images/games/affirmation.svg" alt="Affirmation Spinner" /></div>
+          <h3>Affirmation Spinner</h3>
+          <div id="spin-out" class="spin-output">Click Spin to get a kind thought</div>
+          <div><button id="spin-btn" class="btn primary" onclick="spinAffirmation()">Spin</button></div>
+          <div class="small muted">Tap as many times as you like ✨</div>
+        </div>
+        <div class="card play-card animated-card">
+          <div class="game-illustration"><img src="images/games/prompt.svg" alt="Creative Prompt" /></div>
+          <h3>Creative Prompt</h3>
+          <div id="prompt-out" class="prompt">Need a spark?</div>
+          <div><button class="btn" onclick="newPrompt('prompt-out')">New Prompt</button></div>
+          <div class="small muted">Use for 5-minute drawing or quick writing sprints.</div>
+        </div>
+        <div class="card play-card animated-card">
+          <div class="game-illustration"><img src="images/games/quiz.svg" alt="Mini Quiz" /></div>
+          <h3>Mini Quiz</h3>
+          <div id="quiz-area" class="small">Press Start — just 3 questions</div>
+          <div><button class="btn primary" onclick="startQuiz()">Start Quiz</button></div>
+        </div>
+        <div class="card play-card animated-card">
+          <div class="game-illustration"><img src="images/games/memory.svg" alt="Memory Match" /></div>
+          <h3>Memory Match</h3>
+          <div id="memory-board" class="memory-board" style="margin-top:6px"></div>
+          <div id="memory-status" class="small muted" style="margin-top:8px"></div>
+          <div style="margin-top:10px"><button class="btn" onclick="buildMemory()">New Game</button></div>
+        </div>
+        <div class="card play-card animated-card">
+          <div class="game-illustration"><img src="images/games/scramble.svg" alt="Word Scramble" /></div>
+          <h3>Word Scramble</h3>
+          <div id="scramble-out" class="small muted">Press Shuffle</div>
+          <div style="margin-top:8px">
+            <button class="btn" onclick="scrambleWord()">Shuffle</button>
+            <button class="btn" onclick="revealSolution()">Reveal</button>
+          </div>
+        </div>
+        <div class="card play-card animated-card">
+          <div class="game-illustration"><img src="images/games/timer.svg" alt="5-Minute Sprint" /></div>
+          <h3>5-Minute Sprint</h3>
+          <div id="timer-display" class="small muted">00:05:00</div>
+          <div style="margin-top:8px">
+            <button class="btn primary" onclick="startTimer(300)">Start 5m</button>
+            <button class="btn" onclick="stopTimer()">Stop</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRICING & PACKAGES SECTION -->
+    <section id="pricing" class="block" aria-labelledby="pricing-title">
+      <h2 id="pricing-title">Pricing & Packages</h2>
+      <div class="card pricing-card">
+        <table class="pricing-table">
+          <tr>
+            <th>Service</th>
+            <th>Package Details</th>
+            <th>Price</th>
+          </tr>
+          <tr>
+            <td>Logo Design</td>
+            <td>2–3 unique concepts + 2 revisions<br>Final in PNG, JPG, PDF, SVG</td>
+            <td>350–500 cedis</td>
+          </tr>
+          <tr>
+            <td>Branding Kits</td>
+            <td>Logo, palette, fonts, guide<br>5–10 social media templates</td>
+            <td>800–1200 cedis</td>
+          </tr>
+          <tr>
+            <td>Flyers & Posters</td>
+            <td>Digital & print-ready<br>Price depends on complexity</td>
+            <td>120–300 cedis</td>
+          </tr>
+          <tr>
+            <td>Content Writing</td>
+            <td>Blog posts, articles, web copy, captions</td>
+            <td>100–300 cedis per piece</td>
+          </tr>
+          <tr>
+            <td>Editing & Proofreading</td>
+            <td>Grammar, clarity, flow, formatting</td>
+            <td>50–150 cedis (based on word count)</td>
+          </tr>
+          <tr>
+            <td>CV & Cover Letters</td>
+            <td>Professional CVs, persuasive letters</td>
+            <td>150–300 cedis</td>
+          </tr>
+          <tr>
+            <td>Social Media Kits</td>
+            <td>Templates for IG, FB, LinkedIn<br>Highlight covers, stories, feeds</td>
+            <td>200–600 cedis</td>
+          </tr>
+          <tr>
+            <td>Website Creation</td>
+            <td>Custom, responsive design<br>Up to 5 pages (Home, About, Services, Contact, Blog)</td>
+            <td>1000–2500 cedis</td>
+          </tr>
+          <tr>
+            <td>Bonus: Business Cards</td>
+            <td>Custom design</td>
+            <td>80–150 cedis</td>
+          </tr>
+          <tr>
+            <td>Bonus: Letterheads</td>
+            <td>Custom design</td>
+            <td>50–100 cedis</td>
+          </tr>
+          <tr>
+            <td>Bonus: eBooks / PDF Design</td>
+            <td>Layout & formatting</td>
+            <td>300–800 cedis</td>
+          </tr>
+        </table>
+        <p class="small muted" style="margin-top:10px;">
+          <strong>📍 Based in Ghana | 🌍 Available Worldwide</strong><br>
+          Contact for bundles, full project quotes, or custom requests!
+        </p>
+      </div>
+    </section>
+
+    <!-- Downloads -->
+    <section id="downloads" class="block" aria-labelledby="downloads-title">
+      <h2 id="downloads-title">Downloads — Print & Play</h2>
+      <div class="cols cols-2">
+        <div class="card">
+          <h4>For Kids</h4>
+          <div class="files-list">
+            <a href="files/colouring-affirmations.pdf" download>Coloring: Affirmations (PDF)</a>
+            <a href="files/affirmation-cards.pdf" download>Mini Affirmation Cards (PDF)</a>
+            <a href="files/activity-pack.zip" download>Activity Pack (ZIP)</a>
+          </div>
+          <p class="small muted" style="margin-top:8px">Upload printable files to <code>/files/</code> in your repo to activate downloads.</p>
+        </div>
+        <div class="card">
+          <h4>For Adults</h4>
+          <div class="files-list">
+            <a href="files/journal-pages.pdf" download>Journal Pages (PDF)</a>
+            <a href="files/resume-template.docx" download>CV Template (DOCX)</a>
+            <a href="files/weekly-planner.pdf" download>Weekly Planner (PDF)</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Inspiration -->
+    <section id="inspo" class="block" aria-labelledby="inspo-title">
+      <h2 id="inspo-title">Inspiration & Tips</h2>
+      <div class="cols cols-3">
+        <div class="card"><h4>Daily Tip</h4><p class="muted">Split big goals into short, lovely blocks — ten minutes of focus is still progress.</p></div>
+        <div class="card"><h4>Quote</h4><p class="muted">“Write what should not be forgotten.” — a nudge to keep creating.</p></div>
+        <div class="card"><h4>Affirmation</h4><p class="muted">I am kind to my small, steady steps.</p></div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="block" aria-labelledby="contact-title">
+      <h2 id="contact-title">Work With Scribe Haus</h2>
+      <div class="contact-grid">
+        <div class="card">
+          <h4>Contact</h4>
+          <p class="muted">Email: <a href="mailto:akosuaaddaebuapim@gmail.com">akosuaaddaebuapim@gmail.com</a></p>
+          <p class="muted">Instagram: <a href="https://www.instagram.com/a.buapim" target="_blank">@a.buapim</a></p>
+          <p class="muted">WhatsApp: <a href="https://wa.me/233547940650" target="_blank">+233 54 794 0650</a></p>
+          <div style="margin-top:10px"><button class="btn primary" onclick="location.href='mailto:akosuaaddaebuapim@gmail.com'">Email Me</button></div>
+        </div>
+        <div class="card">
+          <h4>Request a Project</h4>
+          <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" onsubmit="alert('Thanks — your request was sent. I will reply on WhatsApp or email!');return true;">
+            <label class="small">Your name</label>
+            <input type="text" name="name" required>
+            <label class="small" style="margin-top:8px">Email or WhatsApp</label>
+            <input type="text" name="contact">
+            <label class="small" style="margin-top:8px">Project brief</label>
+            <textarea name="message" required style="min-height:120px"></textarea>
+            <div style="margin-top:10px"><button class="btn primary" type="submit">Send Request</button></div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div style="max-width:1120px;margin:0 auto;padding:12px 18px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap">
+      <div style="font-weight:700">© <span id="year"></span> Scribe Haus</div>
+      <div class="small muted">Founded by Akosua Addae Buapim</div>
+      <div class="small"><a href="mailto:akosuaaddaebuapim@gmail.com">Email</a> • <a href="https://www.instagram.com/a.buapim" target="_blank">Instagram</a> • <a href="https://wa.me/233547940650" target="_blank">WhatsApp</a></div>
+    </div>
   </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // AFFIRMATIONS
+    const AFFIRMATIONS = ["I am brave.","I am loved.","I am patient.","I am curious.","I am creative.","I am strong.","I can ask for help.","I am kind.","I am capable.","I try new things.","I am joyful.","I respect others."];
+    function spinAffirmation(){
+      const out = document.getElementById('spin-out');
+      const btn = document.getElementById('spin-btn');
+      if(!out) return;
+      btn.disabled = true;
+      out.textContent = "Spinning…";
+      setTimeout(()=>{
+        out.textContent = AFFIRMATIONS[Math.floor(Math.random()*AFFIRMATIONS.length)];
+        btn.disabled = false;
+      },700);
+    }
+
+    // PROMPTS
+    const PROMPTS = ["Draw your dream house and label three rooms.","Write five lines that begin with 'I imagine...'.","Invent a superhero and their kindest power.","Design a book cover for your future self.","Write a thank-you note to your future self."];
+    function newPrompt(id='prompt-out'){ const el = document.getElementById(id); if(!el) return; el.textContent = PROMPTS[Math.floor(Math.random()*PROMPTS.length)]; }
+
+    // QUIZ
+    const QUIZ = [
+      {q:"Pick a color", a:["Gold","Midnight","Sky","Forest"]},
+      {q:"Pick a power", a:["Creativity","Bravery","Kindness","Wisdom"]},
+      {q:"Pick a vibe", a:["Playful","Calm","Bold","Curious"]}
+    ];
+    const QUIZ_RESULTS = ["The Dreamer ✨","The Warrior 🛡️","The Sage 📖","The Explorer 🌍"];
+    let qStep = 0;
+    function startQuiz(){ qStep=0; renderQuiz(); }
+    function renderQuiz(){
+      const mount = document.getElementById('quiz-area'); if(!mount) return;
+      if(qStep >= QUIZ.length){
+        const r = QUIZ_RESULTS[Math.floor(Math.random()*QUIZ_RESULTS.length)];
+        mount.innerHTML = `<div class="card"><h3>You are: ${r}</h3><p class="small muted">Share or try again!</p><div style="margin-top:10px"><button class="btn" onclick="startQuiz()">Restart</button></div></div>`;
+        return;
+      }
+      const item = QUIZ[qStep];
+      mount.innerHTML = `<div class="card"><h3>${item.q}</h3><div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:10px">${item.a.map(x=>`<button class="btn" onclick="qStep++;renderQuiz()">${x}</button>`).join('')}</div></div>`;
+    }
+
+    // MEMORY MATCH
+    const MEMO_ICONS_BASE = ["📚","⭐","🎨","🧩"];
+    let memoState = {flipped:[],matched:0,locked:false};
+    function shuffle(arr){ for(let i=arr.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[arr[i],arr[j]]=[arr[j],arr[i]] } return arr; }
+    function buildMemory(){
+      const board = document.getElementById('memory-board'); if(!board) return;
+      board.innerHTML='';
+      const icons = shuffle([...MEMO_ICONS_BASE, ...MEMO_ICONS_BASE]);
+      memoState = {flipped:[],matched:0,locked:false};
+      icons.forEach((icon,idx)=>{
+        const btn = document.createElement('button');
+        btn.className='memo-btn'; btn.dataset.icon = icon; btn.dataset.idx = idx; btn.textContent='❒';
+        btn.onclick = ()=>flipCard(btn);
+        board.appendChild(btn);
+      });
+      document.getElementById('memory-status').textContent='';
+    }
+    function flipCard(btn){
+      if(memoState.locked || btn.disabled) return;
+      btn.textContent = btn.dataset.icon;
+      memoState.flipped.push(btn);
+      if(memoState.flipped.length===2){
+        memoState.locked=true;
+        setTimeout(()=>{
+          const [a,b]=memoState.flipped;
+          if(a.dataset.icon===b.dataset.icon){ a.disabled=b.disabled=true; memoState.matched++; if(memoState.matched===MEMO_ICONS_BASE.length){ document.getElementById('memory-status').textContent='You matched them all! 🎉'; } }
+          else { a.textContent=b.textContent='❒'; }
+          memoState.flipped=[]; memoState.locked=false;
+        },600);
+      }
+    }
+
+    // SCRAMBLE
+    const SCRAMBLE_WORDS = ["imagine","wonder","brave","create","storybook","joyful"];
+    let currentSolution='';
+    function scrambleWord(){ const out = document.getElementById('scramble-out'); const pick = SCRAMBLE_WORDS[Math.floor(Math.random()*SCRAMBLE_WORDS.length)]; currentSolution = pick; out.textContent = pick.split('').sort(()=>Math.random()-0.5).join(' '); }
+    function revealSolution(){ const out = document.getElementById('scramble-out'); out.textContent = currentSolution || 'Press Shuffle'; }
+
+    // 5-minute timer
+    let timerInterval=null;
+    function startTimer(seconds){
+      stopTimer();
+      const display = document.getElementById('timer-display'); if(!display) return;
+      let s=seconds;
+      timerInterval = setInterval(()=>{
+        const mm = String(Math.floor(s/60)).padStart(2,'0'); const ss = String(s%60).padStart(2,'0');
+        display.textContent = `00:${mm}:${ss}`; s--;
+        if(s<0){ clearInterval(timerInterval); timerInterval=null; display.textContent='Done! ✨'; }
+      },1000);
+    }
+    function stopTimer(){ if(timerInterval){ clearInterval(timerInterval); timerInterval=null; const display=document.getElementById('timer-display'); if(display) display.textContent='00:05:00'; } }
+
+    // Init
+    document.addEventListener('DOMContentLoaded', ()=>{
+      newPrompt('prompt-out'); buildMemory(); startQuiz();
+    });
+  </script>
 </body>
 </html>
